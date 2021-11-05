@@ -11,7 +11,8 @@ import { CopyrightComponent } from './copyright/copyright.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ImprintComponent } from './imprint/imprint.component';
-import { GoogleMapsModule } from '@angular/google-maps'
+import { GoogleMapsModule } from '@angular/google-maps';
+import { LanguageComponent } from './language/language.component'
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { GoogleMapsModule } from '@angular/google-maps'
     CopyrightComponent,
     HeaderComponent,
     FooterComponent,
-    ImprintComponent
+    ImprintComponent,
+    LanguageComponent
   ],
   imports: [
     BrowserModule,
