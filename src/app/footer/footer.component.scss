@@ -1,0 +1,35 @@
+footer{
+    display:flex;
+    margin-top: 1.5rem;
+    width: 100%;
+    background-color: #EEEEEE;
+}
+.left{
+    width:50%;
+    .copyright {
+        margin-left: 1.5rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 4rem;
+    }
+    .contact{
+        margin-left: 1.5rem;
+        font-weight: normal;
+        font-size: 1rem;
+    }
+}
+
+.right{
+    width: 50%;
+    align-items: flex-end;
+    margin-left: 1.5rem;
+}
+.opening-hours{
+    line-height: 4rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+
+}
+.appointments{
+    font-size: 1rem;
+}
