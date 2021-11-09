@@ -12,7 +12,7 @@
         "CONTACT": {
             "STREET":"Ottostraße 7",
             "PLACE": "31137 Hildesheim",
-            "COUNTRY": "Germany",
+            "COUNTRY": "Deutschland",
             "EMAIL": "info@junkietattoos.com"
         },
         "IMPRINT":{
@@ -20,9 +20,8 @@
             "TITLE_DATA": "Datenschutz"
         },
         "INFO":{
-            "OPENING": "Öffnungszeiten / Opening hours",
-            "APPOINTMENTS": "Termine / Beratungsgespräche nur auf Anfrage.",
-            "REQUEST": " Appointments / consultation only by request."
+            "OPENING": "Öffnungszeiten",
+            "APPOINTMENTS": "Termine / Beratungsgespräche nur auf Anfrage."
         }
     }
    

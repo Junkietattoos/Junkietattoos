@@ -16,6 +16,7 @@ import { LanguageComponent } from './language/language.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HomeComponent } from './home/home.component';
+import { RouterModule } from '@angular/router';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -38,6 +39,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ReactiveFormsModule,
     HttpClientModule,
     GoogleMapsModule,
+    RouterModule,
     TranslateModule.forRoot({
       loader: {
           provide: TranslateLoader,

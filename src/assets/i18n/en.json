@@ -16,13 +16,12 @@
           "EMAIL": "info@junkietattoos.com"
       },
       "IMPRINT":{
-          "TITLE_IMPRINT": "Impressum",
-          "TITLE_DATA": "Datenschutz"
+          "TITLE_IMPRINT": "Imprint",
+          "TITLE_DATA": "Data protection"
       },
       "INFO":{
-          "OPENING": "Öffnungszeiten / Opening hours",
-          "APPOINTMENTS": "Termine / Beratungsgespräche nur auf Anfrage.",
-          "REQUEST": " Appointments / consultation only by request."
+          "OPENING": "Opening hours",
+          "APPOINTMENTS": "Appointments / consultation only by request."
       }
   }
  
