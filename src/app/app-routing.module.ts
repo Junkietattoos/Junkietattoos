@@ -8,11 +8,11 @@ import { LanguageComponent } from './language/language.component';
 
 
 const routes: Routes = [
-  { path: 'app-home', component: HomeComponent },
+  { path: '', component: LanguageComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'imprint', component: ImprintComponent },
   { path: 'copyright', component: CopyrightComponent },
   { path: 'contact', component: ContactFormComponent },
-  { path: 'language', component: LanguageComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
