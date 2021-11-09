@@ -6,15 +6,20 @@ import { AppComponent } from './app.component';
 import {ContactService} from './contact.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ContactFormComponent } from './contact-form/contact-form.component';  
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CopyrightComponent } from './copyright/copyright.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ImprintComponent } from './imprint/imprint.component';
 import { GoogleMapsModule } from '@angular/google-maps';
-import { LanguageComponent } from './language/language.component'
+import { LanguageComponent } from './language/language.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HomeComponent } from './home/home.component';
 
-
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 @NgModule({
   
   declarations: [
@@ -24,14 +29,23 @@ import { LanguageComponent } from './language/language.component'
     HeaderComponent,
     FooterComponent,
     ImprintComponent,
-    LanguageComponent
+    LanguageComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient],
+          
+      }
+  })
   ],
   providers: [
     ContactService,

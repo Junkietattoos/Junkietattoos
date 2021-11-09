@@ -1,0 +1,29 @@
+{
+    "LANGUAGE": {
+      "GERMAN": "DEUTSCH",
+      "ENGLISH": "ENGLISH"
+    },
+
+    "FOOTER": {
+        "COPYRIGHT":{
+            "TITLE": "Lucas Idk, 2021",
+            "LOCATION": "  Blank Tattoostudio"
+        },
+        "CONTACT": {
+            "STREET":"Ottostraße 7",
+            "PLACE": "31137 Hildesheim",
+            "COUNTRY": "Germany",
+            "EMAIL": "info@junkietattoos.com"
+        },
+        "IMPRINT":{
+            "TITLE_IMPRINT": "Impressum",
+            "TITLE_DATA": "Datenschutz"
+        },
+        "INFO":{
+            "OPENING": "Öffnungszeiten / Opening hours",
+            "APPOINTMENTS": "Termine / Beratungsgespräche nur auf Anfrage.",
+            "REQUEST": " Appointments / consultation only by request."
+        }
+    }
+   
+  }

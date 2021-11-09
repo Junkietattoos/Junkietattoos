@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-language',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LanguageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private readonly translate: TranslateService) { }
 
   ngOnInit(): void {
   }
 
+
+  useLanguage(language: string): void {
+    this.translate.use(language);
+}
 }

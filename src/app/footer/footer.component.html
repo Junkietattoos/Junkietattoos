@@ -1,24 +1,23 @@
 <footer>
     <div class="left">
         <div class="copyright">
-            Lucas Idk, 2021 &copy; <br>
-            Blank Tattoostudio
+            {{'FOOTER.COPYRIGHT.TITLE' | translate}}&copy; <br>
+            {{'FOOTER.COPYRIGHT.LOCATION' | translate}}
         </div>
-        <div class="contact">Ottostraße 7 <br>
-            31137 Hildesheim <br>
-            Germany<br>
-
-            info@junkietattoos.com
+        <div class="contact">{{'FOOTER.CONTACT.STREET' | translate}} <br>
+            {{'FOOTER.CONTACT.PLACE' | translate}}<br>
+            {{'FOOTER.CONTACT.COUNTRY' | translate}}<br>
+            {{'FOOTER.CONTACT.EMAIL' | translate}}
         </div>
         <p>
-        <a [routerLink]="['./imprint.component.ts']" class="link-dark">Impressum</a> <br>
-        <a [routerLink]="['./copyright.component.ts']" class="link-dark">Datenschutz</a>
+        <a [routerLink]="['./imprint.component.ts']" class="link-dark">{{'FOOTER.IMPRINT.TITLE_IMPRINT' | translate}}</a> <br>
+        <a [routerLink]="['./copyright.component.ts']" class="link-dark">{{'FOOTER.IMPRINT.TITLE_DATA' | translate}}</a>
         </p>
     </div>
     <div class="right">
-        <p class="opening-hours">Öffnungszeiten / Opening hours </p>
-        <p class="appointments">Termine / Beratungsgespräche nur auf Anfrage.<br>
-        Appointments / consultation only by request . </p>
+        <p class="opening-hours">{{'FOOTER.INFO.OPENING' | translate}}</p>
+        <p class="appointments">{{'FOOTER.INFO.APPOINTMENTS' | translate}}<br>
+            {{'FOOTER.INFO.REQUEST' | translate}} </p>
         <p>
     </p>
     </div>
