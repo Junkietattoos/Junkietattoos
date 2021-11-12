@@ -9,9 +9,9 @@
             {{'FOOTER.CONTACT.COUNTRY' | translate}}<br>
             {{'FOOTER.CONTACT.EMAIL' | translate}}
         </div>
-        <p>
-        <a [routerLink]="['./imprint.component.ts']" class="link-dark">{{'FOOTER.IMPRINT.TITLE_IMPRINT' | translate}}</a> <br>
-        <a [routerLink]="['./copyright.component.ts']" class="link-dark">{{'FOOTER.IMPRINT.TITLE_DATA' | translate}}</a>
+        <p id="links">
+        <a  routerLink="/imprint"  routerLinkActive="active">{{'FOOTER.IMPRINT.TITLE_IMPRINT' | translate}}</a> <br>
+        <a  routerLink="/copyright"  routerLinkActive="active">{{'FOOTER.IMPRINT.TITLE_DATA' | translate}}</a>
         </p>
     </div>
     <div class="right">

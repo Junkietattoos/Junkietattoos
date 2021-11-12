@@ -12,9 +12,21 @@ a:hover{
     text-decoration: none;
 }
 .language{
-    align-items:flex-end; 
+    display: inline-flex;
+    align-items: baseline;
     text-align: end;
     margin-right: 24px;
+
+    button{
+        border: none;
+        background: none;
+        &:hover{
+            text-decoration: underline;
+        }
+        &:focus{
+            border: none;
+        }
+    }
 }
 
 .logo{

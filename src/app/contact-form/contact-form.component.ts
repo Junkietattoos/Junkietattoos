@@ -17,10 +17,16 @@ export class ContactFormComponent implements OnInit {
     ngOnInit() {
 
     this.FormData = this.builder.group({
-      Fullname: new FormControl('', [Validators.required]),
+      Pronouns: new FormControl('', [Validators.required]),
+      Firstname: new FormControl('', [Validators.required]),
+      Lastname: new FormControl('', [Validators.required]),
       Email: new FormControl('', [Validators.compose([Validators.required, Validators.email])]),
-      Size: new FormControl('', [Validators.required]),
-      Position: new FormControl('', [Validators.required])
+      Instagram: new FormControl('', [Validators.required]),
+      Prefix: new FormControl('', [Validators.required]),
+      Phonenumber: new FormControl('', [Validators.required]),
+      Picture: new FormControl('', [Validators.required]),
+      Description: new FormControl('', [Validators.required])
+      
     });
     }
 

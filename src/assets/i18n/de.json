@@ -13,7 +13,8 @@
             "STREET":"Ottostraße 7",
             "PLACE": "31137 Hildesheim",
             "COUNTRY": "Deutschland",
-            "EMAIL": "info@junkietattoos.com"
+            "EMAIL": "info@junkietattoos.com",
+            "PHONE": "0800-Schwanzbeisser"
         },
         "IMPRINT":{
             "TITLE_IMPRINT": "Impressum",
@@ -23,6 +24,20 @@
             "OPENING": "Öffnungszeiten",
             "APPOINTMENTS": "Termine / Beratungsgespräche nur auf Anfrage."
         }
+    },
+
+    "HOME": {
+        "HELLO": "Hallo",
+        "ALIAS": "Wie mein Künstlername bereits sagt:",
+        "DO": "ich tätowiere Leute! Und bald auch dich",
+        "BUTTON": "Terminbuchung"    
+    },
+    "IMPRINT": {
+       "TITLE": "Impressum",
+       "NAME": "Lukas Lustig",
+       "APPOINTMENT": "Terminbuchung"
+    },
+    "COPYRIGHT": {
+        "TITLE": "Datenschutzerklärung"
     }
-   
   }

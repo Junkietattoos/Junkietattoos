@@ -23,6 +23,21 @@
           "OPENING": "Opening hours",
           "APPOINTMENTS": "Appointments / consultation only by request."
       }
-  }
- 
-  }
+  },
+
+  "HOME": {
+      "HELLO": "Hello",
+      "ALIAS": "As my alias already reveals:",
+      "DO": "I tattoo people! And it’s your turn soon!",
+      "BUTTON": "Booking"    
+  },
+  "IMPRINT": {
+      "TITLE": "Imprint",
+      "NAME": "Lukas Lustig",
+      "APPOINTMENT": "Appointment"
+  },
+  "COPYRIGHT": {
+    "TITLE": "Data protection"
+}
+  
+}
