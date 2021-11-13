@@ -1,7 +1,7 @@
 {
   "LANGUAGE": {
-    "GERMAN": "DEUTSCH",
-    "ENGLISH": "ENGLISH"
+    "GERMAN": "Deutsch",
+    "ENGLISH": "English"
   },
 
     "FOOTER": {
@@ -37,7 +37,8 @@
       "APPOINTMENT": "Appointment"
   },
   "COPYRIGHT": {
-    "TITLE": "Data protection"
+    "TITLE": "Data protection",
+    "PHONE": "0800-XXXXXXXX"
 }
   
 }

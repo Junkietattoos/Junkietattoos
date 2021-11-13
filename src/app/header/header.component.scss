@@ -24,7 +24,7 @@ a:hover{
             text-decoration: underline;
         }
         &:focus{
-            border: none;
+            outline:none;
         }
     }
 }

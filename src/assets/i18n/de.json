@@ -1,7 +1,7 @@
 {
     "LANGUAGE": {
-      "GERMAN": "DEUTSCH",
-      "ENGLISH": "ENGLISH"
+      "GERMAN": "Deutsch",
+      "ENGLISH": "English"
     },
 
     "FOOTER": {
@@ -14,7 +14,7 @@
             "PLACE": "31137 Hildesheim",
             "COUNTRY": "Deutschland",
             "EMAIL": "info@junkietattoos.com",
-            "PHONE": "0800-Schwanzbeisser"
+            "PHONE": "0800-XXXXXXXX"
         },
         "IMPRINT":{
             "TITLE_IMPRINT": "Impressum",
@@ -34,7 +34,7 @@
     },
     "IMPRINT": {
        "TITLE": "Impressum",
-       "NAME": "Lukas Lustig",
+       "NAME": "Lukas XXXXX",
        "APPOINTMENT": "Terminbuchung"
     },
     "COPYRIGHT": {
