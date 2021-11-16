@@ -112,4 +112,9 @@ class Student{
   name:string;
   courseId: string;
   courseName: string;
+  preName: string;
+  pronouns: string;
+  email: string;
+  insta: string;
+  phone: string;
 }

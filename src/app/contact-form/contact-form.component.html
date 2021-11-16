@@ -2,8 +2,18 @@
 <form (ngSubmit)="onSubmit()" >
     <div class="container">
 
-        <div><label> Student.</label>
-        <input type="text" name="studentName" [(ngModel)]="_student.name"> </div>
+        <div><label> Pronomen</label>
+        <input type="text" name="studentName" [(ngModel)]="_student.pronouns"> </div>
+        <div><label> Vorname</label>
+            <input type="text" name="studentName" [(ngModel)]="_student.preName"> </div>
+            <div><label> Nachname</label>
+                <input type="text" name="studentName" [(ngModel)]="_student.name"> </div>
+                <div><label> Email</label>
+                    <input type="text" name="studentName" [(ngModel)]="_student.email"> </div>
+                    <div><label> Instagram</label>
+                        <input type="text" name="studentName" [(ngModel)]="_student.insta"> </div>
+                        <div><label> Telefon</label>
+                            <input type="text" name="studentName" [(ngModel)]="_student.phone"> </div>
         <div><label>Courses</label></div>
         <div *ngFor="let item of _courseList" >
             <div>
@@ -22,13 +32,21 @@
     <tr *ngFor="let item of _studentList">
         <thead>
         <td>id</td>
-        <td>name</td>
-        <td>courses</td>
+        <td>Pronomen</td>
+        <td>Vorname</td>
+        <td>Nachname</td>
+        <td>Email</td>
+        <td>instagram</td>
+        <td>Telefon</td>
     </thead>
     <tbody>
         <td>{{item.id}}</td>
+        <td>{{item.pronouns}}</td>
+        <td>{{item.preName}}</td>
         <td>{{item.name}}</td>
-        <td>{{item.courseName}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.insta}}</td>
+        <td>{{item.phone}}</td>
     </tbody>
     </tr>
 </table>
@@ -38,45 +56,6 @@
 
     <form class="px-0">
         <div class="row">
-            <div class="col-sm-12 col-md-2">
-                <div class="mb-3">
-                    <label class="form-label" for="pronouns">Pronomen</label> 
-                    <input id="pronouns" class="form-control" type="text" name="pronouns" placeholder=""> 
-                </div>
-            </div> 
-            <div class="col-sm-12 col-md-5">
-                <div class="mb-3">
-                    <label class="form-label" for="firstName">Vorname</label> 
-                    <input id="firstName" class="form-control" type="text" name="firstName" placeholder=""> 
-                </div>
-            </div> 
-            <div class="col-sm-12 col-md-5">
-                <div class="mb-3">
-                    <label class="form-label" for="lastName">Nachname</label> 
-                    <input id="lastName" class="form-control" type="text" name="lastName" placeholder=""> 
-                </div>
-            </div> 
-            <div class="col-sm-12 col-md-6">
-                <div class="mb-3">
-                    <label class="form-label" for="email">E-Mail</label> 
-                    <input id="email" class="form-control" type="email" name="email" placeholder=""> 
-                </div>
-            </div> 
-            <div class="col-sm-12 col-md-6">
-                <div class="mb-3">
-                    <label class="form-label" for="instagram">Instagram</label>
-                     <div class="input-group">
-                         <span class="input-group-text">@</span> 
-                         <input id="instagram" class="form-control" type="text" name="instagram" placeholder=""> 
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="mb-3">
-                    <label class="form-label" for="phone">Telefon</label>
-                    <input id="phone" type="phone" class="form-control" name="phone" placeholder="">
-                </div>
-            </div>
             <div class="col-12">
                 <div class="mb-3">
                     <label class="form-label" for="exampleImage">Beispielbild</label>
