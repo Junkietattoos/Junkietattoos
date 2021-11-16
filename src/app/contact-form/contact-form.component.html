@@ -1,5 +1,39 @@
 
+<form (ngSubmit)="onSubmit()" >
+    <div class="container">
 
+        <div><label> Student.</label>
+        <input type="text" name="studentName" [(ngModel)]="_student.name"> </div>
+        <div><label>Courses</label></div>
+        <div *ngFor="let item of _courseList" >
+            <div>
+                <input type="checkbox" name="{{item.name}}" (change)="onChange()" [(ngModel)]="item.isSelected">
+                <div><label>{{item.name}}</label></div>
+            </div>
+
+        </div>
+        <div>
+            <input type="submit" value="submit"></div>
+    </div>
+
+</form>
+
+<table>
+    <tr *ngFor="let item of _studentList">
+        <thead>
+        <td>id</td>
+        <td>name</td>
+        <td>courses</td>
+    </thead>
+    <tbody>
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.courseName}}</td>
+    </tbody>
+    </tr>
+</table>
+
+<!--- TODO: Validation Handler einbauen !!! -->
 <div class="container">
 
     <form class="px-0">
@@ -56,127 +90,6 @@
                     <textarea id="description" class="form-control" name="description" placeholder=""></textarea>
                  </div>
                 </div>
-            <div class="col-12">
-                <div class="mb-3">
-                    <label class="form-label" for="bodyPart">Körperteil</label>
-                    <div class="form-check">
-                         <input placeholder="" class="form-check-input" id="Gesicht" type="checkbox" name="bodyPart[]" value="Gesicht">
-                         <label class="form-check-label" for="Gesicht">Gesicht</label>
-                    </div>  
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Hals" type="checkbox" name="bodyPart[]" value="Hals">
-                        <label class="form-check-label" for="Hals">Hals</label>
-                    </div>  
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Nacken" type="checkbox" name="bodyPart[]" value="Nacken">
-                        <label class="form-check-label" for="Nacken">Nacken</label>
-                    </div>  
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Brust" type="checkbox" name="bodyPart[]" value="Brust">
-                        <label class="form-check-label" for="Brust">Brust</label>
-                    </div>  
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Rippe (Oben, unter der Brust)" type="checkbox" name="bodyPart[]" value="Rippe (Oben, unter der Brust)">
-                        <label class="form-check-label" for="Rippe (Oben, unter der Brust)">Rippe (Oben, unter der Brust)</label>
-                    </div>  
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Rippe (Mitte)" type="checkbox" name="bodyPart[]" value="Rippe (Mitte)">
-                        <label class="form-check-label" for="Rippe (Mitte)">Rippe (Mitte)</label>
-                    </div>  
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Unterer Brust Bereich / Oberer Bauch / Underboob" type="checkbox" name="bodyPart[]" value="Unterer Brust Bereich / Oberer Bauch / Underboob">
-                        <label class="form-check-label" for="Unterer Brust Bereich / Oberer Bauch / Underboob">Unterer Brust Bereich / Oberer Bauch / Underboob</label>
-                    </div> 
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Bauch" type="checkbox" name="bodyPart[]" value="Bauch">
-                        <label class="form-check-label" for="Bauch">Bauch</label>
-                    </div>  
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Rücken (Gesamter Rücken)" type="checkbox" name="bodyPart[]" value="Rücken (Gesamter Rücken)">
-                        <label class="form-check-label" for="Rücken (Gesamter Rücken)">Rücken (Gesamter Rücken)</label>
-                    </div>  
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Rücken (Oben)" type="checkbox" name="bodyPart[]" value="Rücken (Oben)">
-                        <label class="form-check-label" for="Rücken (Oben)">Rücken (Oben)</label>
-                    </div>
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Rücken (Unten)" type="checkbox" name="bodyPart[]" value="Rücken (Unten)">
-                        <label class="form-check-label" for="Rücken (Unten)">Rücken (Unten)</label>
-                    </div>  
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Gesamter Arm / Full arm sleeve" type="checkbox" name="bodyPart[]" value="Gesamter Arm / Full arm sleeve">
-                        <label class="form-check-label" for="Gesamter Arm / Full arm sleeve">Gesamter Arm / Full arm sleeve</label>
-                    </div>  
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Oberarm (Biceps)" type="checkbox" name="bodyPart[]" value="Oberarm (Biceps)">
-                        <label class="form-check-label" for="Oberarm (Biceps)">Oberarm (Biceps)</label>
-                    </div>  
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Oberarm (Triceps)" type="checkbox" name="bodyPart[]" value="Oberarm (Triceps)">
-                        <label class="form-check-label" for="Oberarm (Triceps)">Oberarm (Triceps)</label>
-                    </div>  
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Oberarm (Innen)" type="checkbox" name="bodyPart[]" value="Oberarm (Innen)">
-                        <label class="form-check-label" for="Oberarm (Innen)">Oberarm (Innen)</label>
-                    </div>  
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Oberarm (Außen)" type="checkbox" name="bodyPart[]" value="Oberarm (Außen)">
-                        <label class="form-check-label" for="Oberarm (Außen)">Oberarm (Außen)</label>
-                    </div>  
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Unterarm (Innen)" type="checkbox" name="bodyPart[]" value="Unterarm (Innen)">
-                        <label class="form-check-label" for="Unterarm (Innen)">Unterarm (Innen)</label>
-                    </div>  
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Unterarm (Außen)" type="checkbox" name="bodyPart[]" value="Unterarm (Außen)">
-                        <label class="form-check-label" for="Unterarm (Außen)">Unterarm (Außen)</label>
-                    </div>  
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Unterarm (Innen + Außen) / Half arm sleeve" type="checkbox" name="bodyPart[]" value="Unterarm (Innen + Außen) / Half arm sleeve">
-                        <label class="form-check-label" for="Unterarm (Innen + Außen) / Half arm sleeve">Unterarm (Innen + Außen) / Half arm sleeve</label>
-                    </div>  
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Hand (Rücken)" type="checkbox" name="bodyPart[]" value="Hand (Rücken)">
-                        <label class="form-check-label" for="Hand (Rücken)">Hand (Rücken)</label>
-                    </div> 
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Hand (Innenfläche)" type="checkbox" name="bodyPart[]" value="Hand (Innenfläche)">
-                        <label class="form-check-label" for="Hand (Innenfläche)">Hand (Innenfläche)</label>
-                    </div> 
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Gesäß / Po" type="checkbox" name="bodyPart[]" value="Gesäß / Po">
-                        <label class="form-check-label" for="Gesäß / Po">Gesäß / Po</label>
-                    </div> 
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Gesamtes Bein / Full leg sleeve" type="checkbox" name="bodyPart[]" value="Gesamtes Bein / Full leg sleeve">
-                        <label class="form-check-label" for="Gesamtes Bein / Full leg sleeve">Gesamtes Bein / Full leg sleeve</label>
-                    </div>  
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Oberschenkel (Vorne)" type="checkbox" name="bodyPart[]" value="Oberschenkel (Vorne)">
-                        <label class="form-check-label" for="Oberschenkel (Vorne)">Oberschenkel (Vorne)</label>
-                    </div> 
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Oberschenkel (Seite)" type="checkbox" name="bodyPart[]" value="Oberschenkel (Seite)">
-                        <label class="form-check-label" for="Oberschenkel (Seite)">Oberschenkel (Seite)</label>
-                    </div>
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Schienbein" type="checkbox" name="bodyPart[]" value="Schienbein">
-                        <label class="form-check-label" for="Schienbein">Schienbein</label>
-                    </div>
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Wade" type="checkbox" name="bodyPart[]" value="Wade">
-                        <label class="form-check-label" for="Wade">Wade</label>
-                    </div>  
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Schienbein + Wade / Half leg sleeve" type="checkbox" name="bodyPart[]" value="Schienbein + Wade / Half leg sleeve">
-                        <label class="form-check-label" for="Schienbein + Wade / Half leg sleeve">Schienbein + Wade / Half leg sleeve</label>
-                    </div>  
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Füße" type="checkbox" name="bodyPart[]" value="Füße">
-                        <label class="form-check-label" for="Füße">Füße</label>
-                    </div> 
-                </div>
-            </div> 
             <div class="col-12">
                 <div class="mb-3">
                     <label class="form-label" for="designType">Designtyp</label>
@@ -258,6 +171,7 @@
         </div> 
         <div class="col-12">
             <div class="mb-3">
+                <!-- TODO: Text anpassen Lucas schickt ihn -->
                 <label class="mb-0 form-label" for="recurringCustomer">Wiederkehrender Kunde?</label>
                 <div class="mb-2">
                     <small class="form-text text-muted">Falls ja: Bitte Design angeben</small>
@@ -285,5 +199,9 @@
     </div>
 </div>
 </form>
+
+<!-- TODO: Andere als Textarea bei Stelle -->
   
-</div>
+<!-- TODO: Capture // antibot validation -->
+
+</div> 
