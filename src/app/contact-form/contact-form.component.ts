@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder} from '@angular/forms';
-import {ContactService} from '../contact.service';
+import { FormGroup, FormBuilder, FormArray, FormControl, Validators} from '@angular/forms';
 
 
 @Component({
@@ -9,112 +8,134 @@ import {ContactService} from '../contact.service';
   styleUrls: ['./contact-form.component.scss']
 })
 export class ContactFormComponent implements OnInit {
+  name = 'Angular 6';
 
-  _courseList:Course[];
-  _student: Student;
-  _studentList: Student[] =[];
-  uniqueKey: number = 0;
+  bodyParts = [
+    { bodyPart: 'Gesicht' },
+    { bodyPart: 'Hals' },
+    { bodyPart: 'Nacken' },
+    { bodyPart: 'Brust' },
+    { bodyPart: 'Rippe(Oben, unter der Brust)' },
+    { bodyPart: 'Rippe(Mitte)' },
+    { bodyPart: 'Unterer Brust Bereich / Oberer Bauch / Underboob' },
+    { bodyPart: 'Bauch' },
+    { bodyPart: 'Rücken (Gesamter Rücken)' },
+    { bodyPart: 'Rücken (Oben)' },
+    { bodyPart: 'Rücken (Unten' },
+    { bodyPart: 'Gesamter Arm / Full arm sleeve' },
+    { bodyPart: 'Oberarm (Biceps)' },
+    { bodyPart: 'Oberarm (Triceps)' },
+    { bodyPart: 'Oberarm (Innen)' },
+    { bodyPart: 'Oberarm (Außen)' },
+    { bodyPart: 'Unterarm (Innen)' },
+    { bodyPart: 'Unterarm (Außen)' },
+    { bodyPart: 'Unterarm (Innen + Außen) / Half arm sleeve' },
+    { bodyPart: 'Hand (Rücken)' },
+    { bodyPart: 'Hand (Innenfläche)' },
+    { bodyPart: 'Gesäß / Po' },
+    { bodyPart: 'Gesamtes Bein / Full leg sleeve' },
+    { bodyPart: 'Oberschenkel (Vorne)' },
+    { bodyPart: 'Oberschenkel (Seite)' },
+    { bodyPart: 'Schienbein' },
+    { bodyPart: 'Wade' },
+    { bodyPart: 'Schienbein + Wade / Half leg sleeve' },
+    { bodyPart: 'Füße' },
+    { bodyPart: 'Finger' }
+  ];
+
+  designs = [
+    { design: '1237' },
+    { design: '1236' },
+    { design: '1235' },
+    { design: '1234' },
+  ];
+  days = [
+    { day: 'Montag' },
+    { day: 'Dienstag' },
+    { day: 'Mittwoch' },
+    { day: 'Donnerstag' },
+    { day: 'Freitag' },
+    { day: 'Samstag' },
+    { day: 'Sonntag' }
+  ];
+  times = [
+    { time: 'Vormittags' },
+    { time: 'Mittags' },
+    { time: 'Nachmittags' }
+  ];
+  options = [
+    { option: 'Ganztägige Session (Große Projekte / Ganze Körperteile)' },
+    { option: 'Mehrere Tattoos' },
+  ];
+
+  myForm: FormGroup;
+
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
-    this.getCourses();
-    this._student = new Student();
-  }
-
-
-  getCourses() {
-    this._courseList=[
-      {id:1, name:"Gesicht", isSelected:false},
-      {id:2, name:"Hals", isSelected:false},
-      {id:3, name:"Nacken", isSelected:false},
-      {id:4, name:"Brust", isSelected:false},
-      {id:5, name:"Rippe (Oben, unter der Brust)", isSelected:false},
-      {id:6, name:"Rippe (Mitte)", isSelected:false},
-      {id:7, name:"Unterer Brust Bereich / Oberer Bauch / Underboob", isSelected:false},
-      {id:8, name:"Bauch", isSelected:false},
-      {id:9, name:"Rücken (Gesamter Rücken)", isSelected:false},
-      {id:10, name:"Rücken (Oben)", isSelected:false},
-      {id:11, name:"Rücken (Unten)", isSelected:false},
-      {id:12, name:"Gesamter Arm", isSelected:false},
-      {id:13, name:"Oberarm (Biceps)", isSelected:false},
-      {id:14, name:"Oberarm (Triceps)", isSelected:false},
-      {id:15, name:"Oberarm (Innen)", isSelected:false},
-      {id:16, name:"Oberarm (Außen)", isSelected:false},
-      {id:17, name:"Unterarm (Innen)", isSelected:false},
-      {id:18, name:"Unterarm (Außen)", isSelected:false},
-      {id:19, name:"Hand (Rücken)", isSelected:false},
-      {id:20, name:"Hand (Innenfläche)", isSelected:false},
-      {id:21, name:"Gesäß / Po", isSelected:false},
-      {id:22, name:"Gesamtes Bein", isSelected:false},
-      {id:23, name:"Oberschenkel (Vorne)", isSelected:false},
-      {id:24, name:"Oberschenkel (Seite)", isSelected:false},
-      {id:25, name:"Schienbein", isSelected:false},
-      {id:26, name:"Wade", isSelected:false},
-      {id:27, name:"Schienbein", isSelected:false},
-      {id:28, name:"Füße", isSelected:false}
-
-    ]
-  }
-
-  onChange(){
-    console.log(this._courseList);
-  }
-
-  onSubmit(){
-    this._student.courseId = this._courseList.filter(x=>x.isSelected==true).map(x=>x.id).join(",").toString();
-    this._student.courseName = this._courseList.filter(x=>x.isSelected==true).map(x=>x.name).join(",").toString();
-    this.uniqueKey = this.uniqueKey + 1;
-    this._student.id = this.uniqueKey;
-    this._studentList.push(this._student);
-  }
-
-  FormData: FormGroup;
-
-  constructor(private builder: FormBuilder, private contact: ContactService) { }
-
-
-  
-
-   /** this.FormData = this.builder.group({
+    this.myForm = this.fb.group({
       Pronouns: new FormControl('', [Validators.required]),
-      Firstname: new FormControl('', [Validators.required]),
-      Lastname: new FormControl('', [Validators.required]),
-      Email: new FormControl('', [Validators.compose([Validators.required, Validators.email])]),
+      PreName: new FormControl('', [Validators.required]),
+      LastName: new FormControl('', [Validators.required]),
+      Email: new FormControl('', [Validators.required]),
       Instagram: new FormControl('', [Validators.required]),
-      Prefix: new FormControl('', [Validators.required]),
-      Phonenumber: new FormControl('', [Validators.required]),
-      Picture: new FormControl('', [Validators.required]),
-      Description: new FormControl('', [Validators.required])
-      
+      Phone: new FormControl('', [Validators.required]),
+      Description: new FormControl('', [Validators.required]),
+      body: this.fb.array([]),
+      day: this.fb.array([]),
+      time: this.fb.array([]),
+      option: this.fb.array([]),
+      DesignType: new FormControl('', [Validators.required])
     });
+  }
+
+  onChangeBodyPart(bodyPart: string, isChecked: boolean) {
+    const bodyPartArray = <FormArray>this.myForm.controls.body;
+
+    if (isChecked) {
+      bodyPartArray.push(new FormControl(bodyPart));
+    } else {
+      let index = bodyPartArray.controls.findIndex((x) => x.value == bodyPart);
+      bodyPartArray.removeAt(index);
     }
+  }
+  onChangeDays(day: string, isChecked: boolean) {
+    const dayFormArray = <FormArray>this.myForm.controls.day;
 
-    onSubmit(FormData) {
-  //  console.log(FormData)
-    this.contact.PostMessage(FormData)
-      .subscribe(response => {
-        location.href = 'https://mailthis.to/confirm'
-    //    console.log(response)
-      }, error => {
-        console.warn(error.responseText)
-    //   console.log({ error })
-      })
-  }* */
+    if (isChecked) {
+      dayFormArray.push(new FormControl(day));
+    } else {
+      let index = dayFormArray.controls.findIndex((x) => x.value == day);
+      dayFormArray.removeAt(index);
+    }
+  }
+  onChangeTimes(time: string, isChecked: boolean) {
+    const timeFormArray = <FormArray>this.myForm.controls.time;
 
-}
+    if (isChecked) {
+      timeFormArray.push(new FormControl(time));
+    } else {
+      let index = timeFormArray.controls.findIndex((x) => x.value == time);
+      timeFormArray.removeAt(index);
+    }
+  }
+  onChangeOptions(option: string, isChecked: boolean) {
+    const optionFormArray = <FormArray>this.myForm.controls.option;
 
-class Course {
-  id: number;
-  name: string;
-  isSelected: boolean;
-}
-class Student{
-  id:number;
-  name:string;
-  courseId: string;
-  courseName: string;
-  preName: string;
-  pronouns: string;
-  email: string;
-  insta: string;
-  phone: string;
+    if (isChecked) {
+      optionFormArray.push(new FormControl(option));
+    } else {
+      let index = optionFormArray.controls.findIndex((x) => x.value == option);
+      optionFormArray.removeAt(index);
+    }
+  }
+
+
+  onSubmit(): void {
+    console.warn('Your order has been submitted', this.myForm.value);
+    this.myForm.reset();
+  }
+
+
+
 }

@@ -1,186 +1,59 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <input id="name" type="text" formControlName="Pronouns"><br>
+    <input id="name" type="text" formControlName="PreName"><br>
 
-<form (ngSubmit)="onSubmit()" >
-    <div class="container">
+    <input id="name" type="text" formControlName="LastName"><br>
 
-        <div><label> Pronomen</label>
-        <input type="text" name="studentName" [(ngModel)]="_student.pronouns"> </div>
-        <div><label> Vorname</label>
-            <input type="text" name="studentName" [(ngModel)]="_student.preName"> </div>
-            <div><label> Nachname</label>
-                <input type="text" name="studentName" [(ngModel)]="_student.name"> </div>
-                <div><label> Email</label>
-                    <input type="text" name="studentName" [(ngModel)]="_student.email"> </div>
-                    <div><label> Instagram</label>
-                        <input type="text" name="studentName" [(ngModel)]="_student.insta"> </div>
-                        <div><label> Telefon</label>
-                            <input type="text" name="studentName" [(ngModel)]="_student.phone"> </div>
-        <div><label>Courses</label></div>
-        <div *ngFor="let item of _courseList" >
-            <div>
-                <input type="checkbox" name="{{item.name}}" (change)="onChange()" [(ngModel)]="item.isSelected">
-                <div><label>{{item.name}}</label></div>
-            </div>
+    <input id="name" type="text" formControlName="Email"><br>
 
-        </div>
-        <div>
-            <input type="submit" value="submit"></div>
+    <input id="name" type="text" formControlName="Instagram"><br>
+
+    <input id="name" type="text" formControlName="Phone"><br>
+
+    <input id="name" type="text" formControlName="Description"><br>
+
+<br>
+    <div *ngFor="let data of bodyParts">
+      <input
+        type="checkbox"
+        (change)="onChangeBodyPart(data.bodyPart, $event.target.checked)"
+      />
+      {{ data.bodyPart }}<br />
     </div>
-
-</form>
-
-<table>
-    <tr *ngFor="let item of _studentList">
-        <thead>
-        <td>id</td>
-        <td>Pronomen</td>
-        <td>Vorname</td>
-        <td>Nachname</td>
-        <td>Email</td>
-        <td>instagram</td>
-        <td>Telefon</td>
-    </thead>
-    <tbody>
-        <td>{{item.id}}</td>
-        <td>{{item.pronouns}}</td>
-        <td>{{item.preName}}</td>
-        <td>{{item.name}}</td>
-        <td>{{item.email}}</td>
-        <td>{{item.insta}}</td>
-        <td>{{item.phone}}</td>
-    </tbody>
-    </tr>
-</table>
-
-<!--- TODO: Validation Handler einbauen !!! -->
-<div class="container">
-
-    <form class="px-0">
-        <div class="row">
-            <div class="col-12">
-                <div class="mb-3">
-                    <label class="form-label" for="exampleImage">Beispielbild</label>
-                    <input id="exampleImage" class="form-control" type="file" invalid="false" name="exampleImage" placeholder="" valid="false"> 
-                    <small class="form-text text-muted">Maximal 10MB Uploadgröße</small>
-                </div>
-            </div> 
-            <div class="col-12">
-                <div class="mb-3">
-                    <label class="form-label" for="description">Beschreibung / Platzierung / Ungefähre Größe</label>
-                    <textarea id="description" class="form-control" name="description" placeholder=""></textarea>
-                 </div>
-                </div>
-            <div class="col-12">
-                <div class="mb-3">
-                    <label class="form-label" for="designType">Designtyp</label>
-                    <div class="form-check"><input placeholder="" class="form-check-input" id="Flash" type="radio" name="designType[]" value="Flash">
-                        <label class="form-check-label" for="Flash">Flash</label>
-                    </div>  
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Custom" type="radio" name="designType[]" value="Custom">
-                        <label class="form-check-label" for="Custom">Custom</label>
-                    </div>  
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Nicht bekannt" type="radio" name="designType[]" value="Nicht bekannt">
-                        <label class="form-check-label" for="Nicht bekannt">Nicht bekannt</label>
-                    </div> 
-                </div>
-            </div> 
-            <div class="col-12">
-                <div class="mb-3">
-                    <label class="mb-0 form-label" for="preferredDay">Präferierter Tag</label>
-                    <div class="mb-2">
-                        <small class="form-text text-muted">Gerne können mehrere Tage ausgewählt werden</small>
-                    </div> 
-                    <div class="form-check"><input placeholder="" class="form-check-input" id="Montag" type="checkbox" name="preferredDay[]" value="Montag">
-                    <label class="form-check-label" for="Montag">Montag</label>
-                </div>  
-                <div class="form-check">
-                    <input placeholder="" class="form-check-input" id="Dienstag" type="checkbox" name="preferredDay[]" value="Dienstag">
-                    <label class="form-check-label" for="Dienstag">Dienstag</label>
-                </div>  
-                <div class="form-check">
-                    <input placeholder="" class="form-check-input" id="Mittwoch" type="checkbox" name="preferredDay[]" value="Mittwoch">
-                    <label class="form-check-label" for="Mittwoch">Mittwoch</label>
-                </div>
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Donnerstag" type="checkbox" name="preferredDay[]" value="Donnerstag">
-                        <label class="form-check-label" for="Donnerstag">Donnerstag</label>
-                    </div>  
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Freitag" type="checkbox" name="preferredDay[]" value="Freitag">
-                        <label class="form-check-label" for="Freitag">Freitag</label>
-                    </div>  
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Samstag" type="checkbox" name="preferredDay[]" value="Samstag">
-                        <label class="form-check-label" for="Samstag">Samstag</label>
-                    </div> 
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Sonntag" type="checkbox" name="preferredDay[]" value="Sonntag">
-                        <label class="form-check-label" for="Sonntag">Sonntag</label>
-                    </div> 
-                </div>
-            </div> 
-            <div class="col-12">
-                <div class="mb-3"><label class="form-label" for="preferredDaytime">Präferierte Tageszeit</label>
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Vormittags" type="checkbox" name="preferredDaytime[]" value="Vormittags">
-                        <label class="form-check-label" for="Vormittags">Vormittags</label>
-                    </div>  
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Mittags" type="checkbox" name="preferredDaytime[]" value="Mittags">
-                        <label class="form-check-label" for="Mittags">Mittags</label>
-                    </div>  
-                    <div class="form-check">
-                        <input placeholder="" class="form-check-input" id="Nachmittags" type="checkbox" name="preferredDaytime[]" value="Nachmittags"> 
-                        <label class="form-check-label" for="Nachmittags">Nachmittags</label>
-                    </div> 
-                </div>
-            </div> 
-            <div class="col-12"><div class="mb-3">
-                <label class="form-label" for="otherInfo">Weitere Angaben zum Projekt</label>
-                <div class="form-check">
-                    <input placeholder="" class="form-check-input" id="Ganztägige Session (Große Projekte / Ganze Körperteile)" type="checkbox" name="otherInfo[]" value="Ganztägig">
-                    <label class="form-check-label" for="Ganztägige Session (Große Projekte / Ganze Körperteile)">Ganztägige Session (Große Projekte / Ganze Körperteile)</label>
-                </div>  
-                <div class="form-check">
-                    <input placeholder="" class="form-check-input" id="Mehrere Tattoos" type="checkbox" name="otherInfo[]" value="Mehrere Tattoos"> 
-                    <label class="form-check-label" for="Mehrere Tattoos">Mehrere Tattoos</label>
-                </div> 
-            </div>
-        </div> 
-        <div class="col-12">
-            <div class="mb-3">
-                <!-- TODO: Text anpassen Lucas schickt ihn -->
-                <label class="mb-0 form-label" for="recurringCustomer">Wiederkehrender Kunde?</label>
-                <div class="mb-2">
-                    <small class="form-text text-muted">Falls ja: Bitte Design angeben</small>
-            </div> 
-            <textarea id="recurringCustomer" class="form-control" name="recurringCustomer" placeholder=""></textarea>
+    <br>
+    <br>
+    <input id="name" type="radio" formControlName="DesignType" value="Flash">
+    <span>Flash</span>
+    <input id="name" type="radio" formControlName="DesignType" value="Custom">
+    <span>Custom</span>
+    <input id="name" type="radio" formControlName="DesignType" value="Nicht bekannt">
+    <span>Nicht bekannt</span>
+    <br><br><br>
+    <div *ngFor="let data of days">
+        <input
+          type="checkbox"
+          (change)="onChangeDays(data.day, $event.target.checked)"
+        />
+        {{ data.day }}<br />
+      </div>
+      <br><br><br>
+      <div *ngFor="let data of times">
+          <input
+            type="checkbox"
+            (change)="onChangeTimes(data.time, $event.target.checked)"
+          />
+          {{ data.time }}<br />
         </div>
-    </div>
-    <hr>
-    <div class="col-12">
-        <div class="mb-3">
-            <div class="form-check"><input placeholder="" class="form-check-input" id="Ich stimme den folgenden Bedingnungen zu:" type="checkbox" name="agreementAccepted" value="aggreementAccepted">
-                <label class="form-check-label" for="Ich stimme den folgenden Bedingnungen zu:">Ich stimme den folgenden Bedingnungen zu:</label>
-            </div>
-        </div>
-        <ul class="pl-1">
-            <li class="fw-bold">Ich bin über 18 Jahre alt.</li> 
-			<li class="fw-bold">Ich bin mir bewusst eventuelle Ansprüche auf Vorkassen-Zahlungen zu verlieren, sofern ich den gewählten Termin später als 48 Stunden vor Beginn absage.</li> 
-			<li class="fw-bold">Ich bin damit einverstanden während des Termins eine medizinische Mund-Nasen-Bedeckung zu tragen</li>
-        </ul>
-    </div> 
-    <div class="col-12">
-        <div class="mb-3">
-            <button class="btn btn-dark btn-block mb-5" type="submit">Senden</button>
-        </div>
-    </div>
-</div>
-</form>
+        <br><br><br>
+        <div *ngFor="let data of options">
+            <input
+              type="checkbox"
+              (change)="onChangeOptions(data.option, $event.target.checked)"
+            />
+            {{ data.option }}<br />
+          </div>
+      <br><br><br>
+    <button class="button" type="submit">Purchase</button>
+  </form>
 
-<!-- TODO: Andere als Textarea bei Stelle -->
-  
-<!-- TODO: Capture // antibot validation -->
-
-</div> 
+  <pre>Form values: {{ myForm.value | json }}</pre>
