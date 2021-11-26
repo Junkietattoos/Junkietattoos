@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, FormControl, Validators} from '@angular/forms';
 
@@ -8,7 +9,6 @@ import { FormGroup, FormBuilder, FormArray, FormControl, Validators} from '@angu
   styleUrls: ['./contact-form.component.scss']
 })
 export class ContactFormComponent implements OnInit {
-  name = 'Angular 6';
 
   bodyParts = [
     { bodyPart: 'Gesicht' },
@@ -70,7 +70,9 @@ export class ContactFormComponent implements OnInit {
 
   myForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder
+    ) {}
 
   ngOnInit() {
     this.myForm = this.fb.group({
@@ -81,11 +83,14 @@ export class ContactFormComponent implements OnInit {
       Instagram: new FormControl('', [Validators.required]),
       Phone: new FormControl('', [Validators.required]),
       Description: new FormControl('', [Validators.required]),
+      file: new FormControl('', [Validators.required]),
       body: this.fb.array([]),
+      DesignType: new FormControl('', [Validators.required]),
       day: this.fb.array([]),
       time: this.fb.array([]),
       option: this.fb.array([]),
-      DesignType: new FormControl('', [Validators.required])
+      recurring: new FormControl('', [Validators.required]),
+      accepted: new FormControl('', [Validators.required])
     });
   }
 
@@ -130,9 +135,19 @@ export class ContactFormComponent implements OnInit {
     }
   }
 
+  get f(){
+    return this.myForm.controls;
+  }
+   
 
   onSubmit(): void {
     console.warn('Your order has been submitted', this.myForm.value);
+    console.log(this.myForm.value);
+  //**  this.http.post('http://localhost:8001/contact.php', this.myForm.value)
+    //  .subscribe(res => {
+    //    console.log(res);
+    //    alert('Uploaded Successfully.');
+    //  }) 
     this.myForm.reset();
   }
 
