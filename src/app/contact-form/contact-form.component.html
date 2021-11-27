@@ -7,51 +7,51 @@
     </div>
     <div class="row justify-content-center">
       <div class="col-auto">
-        <h1>Buchungsanfrage</h1>
+        <h1>{{'CONTACT.APPOINTMENT_REQUEST' | translate}}</h1>
       </div>
     </div>
     <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="px-0">
       <div class="row">
         <div class="col-sm-12 col-md-2">
           <div class="mb-3">
-            <label class="form-label" for="Pronouns">Pronomen</label>
+            <label class="form-label" for="Pronouns">{{'CONTACT.PRONOUNS' | translate}}</label>
             <input id="Pronouns" type="text" formControlName="Pronouns" class="full">
           </div>
         </div>
         <div class="col-sm-12 col-md-5">
           <div class="mb-3">
-            <label class="form-label" for="PreName">Vorname</label>
+            <label class="form-label" for="PreName">{{'CONTACT.FIRST_NAME' | translate}}</label>
             <input id="PreName" type="text" formControlName="PreName" class="full">
           </div>
         </div>
         <div class="col-sm-12 col-md-5">
           <div class="mb-3">
-            <label class="form-label" for="LastName">Nachname</label>
+            <label class="form-label" for="LastName">{{'CONTACT.LAST_NAME' | translate}}</label>
             <input id="LastName" type="text" formControlName="LastName" class="full">
           </div>
         </div>
         <div class="col-sm-12 col-md-5">
           <div class="mb-3">
-            <label class="form-label" for="Email">E-Mail</label>
+            <label class="form-label" for="Email">{{'CONTACT.EMAIL' | translate}}</label>
             <input id="email" type="text" formControlName="Email" class="full">
           </div>
         </div>
         <div class="col-sm-12 col-md-5">
           <div class="mb-3">
-            <label class="form-label" for="Instagram">Instagram</label>
+            <label class="form-label" for="Instagram">{{'CONTACT.INSTAGRAM' | translate}}</label>
             <input id="name" type="text" formControlName="Instagram" class="full">
           </div>
         </div>
         <div class="col-12">
           <div class="mb-3">
-            <label class="form-label" for="phone">Telefon</label>
+            <label class="form-label" for="phone">{{'CONTACT.PHONE' | translate}}</label>
             <input id="name" type="text" formControlName="Phone" class="full">
           </div>
         </div>
         <div class="col-12">
           <div class="mb-3">
             <input type="file" accept="image/*" formControlName="file" class="full" />
-            <small class="form-text text-muted">Maximal 10MB Uploadgröße</small>
+            <small class="form-text text-muted">{{'CONTACT.UPLOAD_SIZE' | translate}}</small>
           </div>
         </div>
         <!-- Validierung    <div *ngIf="f.file.touched && f.file.invalid" class="alert alert-danger">
@@ -60,7 +60,7 @@
     -->
         <div class="col-12">
           <div class="mb-3">
-            <label class="form-label" for="Description">Beschreibung / Platzierung / Ungefähre Größe</label>
+            <label class="form-label" for="Description">{{'CONTACT.DESCRIPTION' | translate}}</label>
             <input id="name" type="textarea" formControlName="Description" class="item" class="full">
           </div>
         </div>
@@ -75,15 +75,15 @@
         </div>
         <div class="col-12">
           <input id="name" type="radio" formControlName="DesignType" value="Flash" class="item">
-          <span>Flash</span>
+          <span>{{'CONTACT.FLASH' | translate}}</span>
         </div>
         <div class="col-12">
           <input id="name" type="radio" formControlName="DesignType" value="Custom" class="item">
-          <span>Custom</span>
+          <span>{{'CONTACT.CUSTOM' | translate}}</span>
         </div>
         <div class="col-12">
           <input id="name" type="radio" formControlName="DesignType" value="Nicht bekannt" class="item">
-          <span>Nicht bekannt</span>
+          <span>{{'CONTACT.UNKNOWN' | translate}}</span>
         </div>
         <div class="col-12">
           <div class="mb-3">
@@ -113,28 +113,27 @@
         </div>
         <div class="col-12">
           <div class="mb-3">
-            <label class="form-label" for="recurring">Wiederkehrender Kunde?</label>
+            <label class="form-label" for="recurring">{{'CONTACT.RECURRING_CUSTOMER' | translate}}</label>
             <div class="mb-2">
-              <small class="form-text text-muted">Falls ja: Bitte Design angeben</small>
+              <small class="form-text text-muted">{{'CONTACT.DESIGN' | translate}}</small>
             </div>
             <input id="recurring" type="text" formControlName="recurring" class="item" />
           </div>
         </div>
         <div class="col-12">
           <div class="mb-3">
-            <input id="accepted" type="checkbox" formControlName="accepted" class="item">
+            <input id="accepted" type="checkbox" formControlName="accepted" class="item" >
             <span>
-              Hiermit stimme ich den folgenden Bedingnungen zu:
+              {{'CONTACT.AGREE_1' | translate}}
             </span>
             <ul class="pl-1">
-              <li class="fw-bold">Ich bin über 18 Jahre alt.</li>
-              <li class="fw-bold">Ich bin mir bewusst eventuelle Ansprüche auf Vorkassen-Zahlungen zu verlieren, sofern ich
-                den gewählten Termin später als 48 Stunden vor Beginn absage.</li>
-              <li class="fw-bold">Ich bin damit einverstanden während des Termins eine medizinische Mund-Nasen-Bedeckung zu tragen.</li>
+              <li class="fw-bold">  {{'CONTACT.AGREE_2' | translate}}</li>
+              <li class="fw-bold">  {{'CONTACT.AGREE_3' | translate}}</li>
+              <li class="fw-bold">  {{'CONTACT.AGREE_4' | translate}}</li>
             </ul>
           </div>
         </div>
-        <button class="button" type="submit" class="item">Absenden</button>
+        <button class="btn btn-dark" type="submit" >  {{'CONTACT.SEND' | translate}}</button>
       </div>
     </form>
   </div>

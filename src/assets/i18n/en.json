@@ -39,6 +39,26 @@
   "COPYRIGHT": {
     "TITLE": "Data protection",
     "PHONE": "0800-XXXXXXXX"
+},
+"CONTACT": {
+    "APPOINTMENT_REQUEST": "Appointment Request",
+    "PRONOUNS": "Pronouns",
+    "FIRST_NAME": "First name",
+    "LAST_NAME": "Last name",
+    "EMAIL": "E-Mail",
+    "INSTAGRAM": "Instagram",
+    "PHONE": "Phone",
+    "UPLOAD_SIZE": "Maximum 10MB uploadsize",
+    "DESCRIPTION": "Description / Placement / Approxiamete Size",
+    "FLASH": "Flash",
+    "CUSTOM": "Custom",
+    "UNKNOWN": "Unknown",
+    "RECURRING_CUSTOMER": "Recurring customer?", 
+    "DESIGN": "If so: Please specify design",
+    "AGREE_1": "I hereby agree to the following conditions:",
+    "AGREE_2": "I am over 18 years old.",
+    "AGREE_3": "I am aware that I will lose any claims to prepayment if I cancel the chosen appointment later than 48 hours before the start.",
+    "AGREE_4": "I agree to wear a medical mouth and nose cover during the appointment.",
+    "SEND": "Submit request"
 }
-  
 }
