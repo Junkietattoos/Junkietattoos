@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormArray, FormControl, Validators} from '@angular/forms';
+import { FormGroup, FormBuilder, FormArray, FormControl, Validators, NgForm} from '@angular/forms';
 
 
 @Component({
@@ -71,7 +71,8 @@ export class ContactFormComponent implements OnInit {
   myForm: FormGroup;
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private http: HttpClient
     ) {}
 
   ngOnInit() {
@@ -140,7 +141,7 @@ export class ContactFormComponent implements OnInit {
   }
    
 
-  onSubmit(): void {
+  onSubmit(myForm: FormGroup) {
     console.warn('Your order has been submitted', this.myForm.value);
     console.log(this.myForm.value);
   //**  this.http.post('http://localhost:8001/contact.php', this.myForm.value)
@@ -148,9 +149,30 @@ export class ContactFormComponent implements OnInit {
     //    console.log(res);
     //    alert('Uploaded Successfully.');
     //  }) 
+    const email = myForm.value;
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    this.http.post('https://formspree.io/f/xjvlvaed',
+      { name: email.name, replyto: email.email, message: email.messages },
+      { 'headers': headers }).subscribe(
+        response => {
+          console.log(response);
+        }
+      );
     this.myForm.reset();
   }
-
+  onSubmitt(contactForm: NgForm) {
+    if (contactForm.valid) {
+      const email = contactForm.value;
+      const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+      this.http.post('https://formspree.io/f/xjvlvaed',
+        { name: email.name, replyto: email.email, message: email.messages },
+        { 'headers': headers }).subscribe(
+          response => {
+            console.log(response);
+          }
+        );
+    }
+  }
 
 
 }

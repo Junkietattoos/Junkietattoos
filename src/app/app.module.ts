@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {ContactService} from './contact.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactFormComponent } from './contact-form/contact-form.component';  
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -51,7 +50,6 @@ export function HttpLoaderFactory(http: HttpClient) {
   })
   ],
   providers: [
-    ContactService,
   ],
   bootstrap: [AppComponent]
 })

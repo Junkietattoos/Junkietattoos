@@ -1,21 +1,31 @@
 <div class="home">
-    <div class="left"> 
-    <h1>
+    <div class="left">
+        <h1>
             {{'HOME.HELLO' | translate }}
         </h1>
         <br>
         <p>
             {{'HOME.ALIAS' | translate }} <br>
 
-            {{'HOME.DO' | translate }} 
+            {{'HOME.DO' | translate }}
         </p>
 
-      <!-- <button type="button" class="btn btn-dark" routerLink="/contact"  routerLinkActive="active"> {{'HOME.BUTTON' | translate}} </button> -->
+        <button type="button" class="btn btn-dark" routerLink="/contact" routerLinkActive="active"> {{'HOME.BUTTON' |
+            translate}} </button>
 
     </div>
-    <div id="right">
-     <!--TODO:   Hier kann evtl der Instagram feed displayed werden ? 
-        Dafür muss die Website aber öffentlich sein. Siehe Instagram Dev Doku. -->
-    </div>
+        <!-- Place <div> tag where you want the feed to appear -->
+        <div id="curator-feed-default-feed-layout">
+            <a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a>
+        </div>
+        <!-- The Javascript can be moved to the end of the html page before the </body> tag -->
+        <script type="text/javascript">
+            /* curator-feed-default-feed-layout */
+            (function () {
+                var i, e, d = document, s = "script"; i = d.createElement("script"); i.async = 1; i.charset = "UTF-8";
+                i.src = "https://cdn.curator.io/published/3ab3b6e2-c042-4e5d-a8ec-735770accdb3.js";
+                e = d.getElementsByTagName(s)[0]; e.parentNode.insertBefore(i, e);
+            })();
+        </script>
 </div>
 
