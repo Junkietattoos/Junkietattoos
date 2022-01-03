@@ -40,6 +40,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     GoogleMapsModule,
     RouterModule,
+    HttpClientModule,
     TranslateModule.forRoot({
       loader: {
           provide: TranslateLoader,

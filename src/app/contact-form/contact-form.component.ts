@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, FormControl, Validators, NgForm} from '@angular/forms';
 
@@ -8,7 +9,9 @@ import { FormGroup, FormBuilder, FormArray, FormControl, Validators, NgForm} fro
   styleUrls: ['./contact-form.component.scss']
 })
 export class ContactFormComponent implements OnInit {
-
+  
+  _url: '';
+  
   bodyParts = [
     { bodyPart: 'Gesicht' },
     { bodyPart: 'Hals' },
@@ -71,6 +74,7 @@ export class ContactFormComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    private _http: HttpClient
     ) {}
 
   ngOnInit() {
@@ -137,13 +141,16 @@ export class ContactFormComponent implements OnInit {
   get f(){
     return this.myForm.controls;
   }
-   
 
-  onSubmit(myForm: FormGroup) {
-    console.warn('Your order has been submitted', this.myForm.value);
-    console.log(this.myForm.value);
-    this.myForm.reset();
+  enroll(myForm: FormGroup) {
+   return this._http.post<any>(this._url, myForm);
   }
-
-
+  onSubmit() {
+    console.warn('Your order has been submitted', this.myForm.value);
+    this.myForm.reset();
+    this.enroll(this.myForm).subscribe(
+      data => console.log('yes', data),
+      error => console.log('no :(', error)
+    )
+  }
 }
