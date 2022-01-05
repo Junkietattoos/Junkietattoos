@@ -145,10 +145,10 @@ export class ContactFormComponent implements OnInit {
   enroll(myForm: FormGroup) {
    return this._http.post<any>(this._url, myForm);
   }
-  onSubmit() {
+  onSubmit(myForm: FormGroup) {
     console.warn('Your order has been submitted', this.myForm.value);
     this.myForm.reset();
-    this.enroll(this.myForm).subscribe(
+    this.enroll(myForm).subscribe(
       data => console.log('yes', data),
       error => console.log('no :(', error)
     )
