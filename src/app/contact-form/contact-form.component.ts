@@ -10,7 +10,7 @@ import { FormGroup, FormBuilder, FormArray, FormControl, Validators, NgForm} fro
 })
 export class ContactFormComponent implements OnInit {
   
-  _url = 'http://backend-u7nowymugq-ew.a.run.app/junkietattoos/receiveNewContact/';
+  _url = 'https://backend-u7nowymugq-ew.a.run.app/junkietattoos/receiveNewContact/';
 
   
   bodyparts = [
