@@ -10,47 +10,47 @@
         <h1>{{'CONTACT.APPOINTMENT_REQUEST' | translate}}</h1>
       </div>
     </div>
-    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)" class="px-0">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="px-0">
       <div class="row">
         <div class="col-sm-12 col-md-2">
           <div class="mb-3">
             <label class="form-label" for="Pronouns">{{'CONTACT.PRONOUNS' | translate}}</label>
-            <input id="Pronouns" type="text" formControlName="Pronouns" class="full" name="name">
+            <input id="Pronouns" type="text" formControlName="pronouns" class="full" name="name">
           </div>
         </div>
         <div class="col-sm-12 col-md-5">
           <div class="mb-3">
-            <label class="form-label" for="PreName">{{'CONTACT.FIRST_NAME' | translate}}</label>
-            <input id="PreName" type="text" formControlName="PreName" class="full" name="email">
+            <label class="form-label" for="prename">{{'CONTACT.FIRST_NAME' | translate}}</label>
+            <input id="prename" type="text" formControlName="firstname" class="full" name="email">
           </div>
         </div>
         <div class="col-sm-12 col-md-5">
           <div class="mb-3">
-            <label class="form-label" for="LastName">{{'CONTACT.LAST_NAME' | translate}}</label>
-            <input id="LastName" type="text" formControlName="LastName" class="full">
+            <label class="form-label" for="lastname">{{'CONTACT.LAST_NAME' | translate}}</label>
+            <input id="lastname" type="text" formControlName="lastname" class="full">
           </div>
         </div>
         <div class="col-sm-12 col-md-5">
           <div class="mb-3">
             <label class="form-label" for="Email">{{'CONTACT.EMAIL' | translate}}</label>
-            <input id="email" type="text" formControlName="Email" class="full">
+            <input id="email" type="text" formControlName="email" class="full">
           </div>
         </div>
         <div class="col-sm-12 col-md-5">
           <div class="mb-3">
             <label class="form-label" for="Instagram">{{'CONTACT.INSTAGRAM' | translate}}</label>
-            <input id="name" type="text" formControlName="Instagram" class="full">
+            <input id="name" type="text" formControlName="instagram" class="full">
           </div>
         </div>
         <div class="col-12">
           <div class="mb-3">
             <label class="form-label" for="phone">{{'CONTACT.PHONE' | translate}}</label>
-            <input id="name" type="text" formControlName="Phone" class="full">
+            <input id="name" type="text" formControlName="phonenumber" class="full">
           </div>
         </div>
         <div class="col-12">
           <div class="mb-3">
-            <input type="file" accept="image/*" formControlName="file" class="full" />
+            <input type="file" accept="image/*" formControlName="image" class="full" />
             <small class="form-text text-muted">{{'CONTACT.UPLOAD_SIZE' | translate}}</small>
           </div>
         </div>
@@ -61,7 +61,7 @@
         <div class="col-12">
           <div class="mb-3">
             <label class="form-label" for="Description">{{'CONTACT.DESCRIPTION' | translate}}</label>
-            <input id="name" type="textarea" formControlName="Description" class="item" class="full">
+            <input id="name" type="textarea" formControlName="description" class="item" class="full">
           </div>
         </div>
 
@@ -74,22 +74,22 @@
           </div>
         </div>
         <div class="col-12">
-          <input id="name" type="radio" formControlName="DesignType" value="Flash" class="item">
+          <input id="name" type="radio" formControlName="designtype" value="Flash" class="item">
           <span>{{'CONTACT.FLASH' | translate}}</span>
         </div>
         <div class="col-12">
-          <input id="name" type="radio" formControlName="DesignType" value="Custom" class="item">
+          <input id="name" type="radio" formControlName="designtype" value="Custom" class="item">
           <span>{{'CONTACT.CUSTOM' | translate}}</span>
         </div>
         <div class="col-12">
-          <input id="name" type="radio" formControlName="DesignType" value="Nicht bekannt" class="item">
+          <input id="name" type="radio" formControlName="designtype" value="Nicht bekannt" class="item">
           <span>{{'CONTACT.UNKNOWN' | translate}}</span>
         </div>
         <div class="col-12">
           <div class="mb-3">
             <div *ngFor="let data of days" class="item">
-              <input type="checkbox" (change)="onChangeDays(data.day, $event.target.checked)" />
-              {{ data.day }}<br />
+              <input type="checkbox" (change)="onChangeDays(data.preferredDay, $event.target.checked)" />
+              {{ data.preferredDay }}<br />
             </div>
           </div>
         </div>
@@ -97,8 +97,8 @@
         <div class="col-12">
           <div class="mb-3">
             <div *ngFor="let data of times" class="item">
-              <input type="checkbox" (change)="onChangeTimes(data.time, $event.target.checked)" />
-              {{ data.time }}<br />
+              <input type="checkbox" (change)="onChangeTimes(data.preferredTime, $event.target.checked)" />
+              {{ data.preferredTime }}<br />
             </div>
           </div>
         </div>
@@ -106,18 +106,18 @@
         <div class="col-12">
           <div class="mb-3">
             <div *ngFor="let data of options" class="item">
-              <input type="checkbox" (change)="onChangeOptions(data.option, $event.target.checked)" />
-              {{ data.option }}<br />
+              <input type="checkbox" (change)="onChangeOptions(data.projectInformation, $event.target.checked)" />
+              {{ data.projectInformation }}<br />
             </div>
           </div>
         </div>
         <div class="col-12">
           <div class="mb-3">
-            <label class="form-label" for="recurring">{{'CONTACT.RECURRING_CUSTOMER' | translate}}</label>
+            <label class="form-label" for="recurringCustomer">{{'CONTACT.RECURRING_CUSTOMER' | translate}}</label>
             <div class="mb-2">
               <small class="form-text text-muted">{{'CONTACT.DESIGN' | translate}}</small>
             </div>
-            <input id="recurring" type="text" formControlName="recurring" class="item" />
+            <input id="recurringCustomer" type="text" formControlName="recurringCustomer" class="item" />
           </div>
         </div>
         <div class="col-12">

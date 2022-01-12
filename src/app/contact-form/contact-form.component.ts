@@ -10,7 +10,7 @@ import { FormGroup, FormBuilder, FormArray, FormControl, Validators, NgForm} fro
 })
 export class ContactFormComponent implements OnInit {
   
-  _url: '';
+  _url: 'https://backend-u7nowymugq-ew.a.run.app:8080/junkietattoos/receiveNewContact';
   
   bodyParts = [
     { bodyPart: 'Gesicht' },
@@ -52,22 +52,22 @@ export class ContactFormComponent implements OnInit {
     { design: '1234' },
   ];
   days = [
-    { day: 'Montag' },
-    { day: 'Dienstag' },
-    { day: 'Mittwoch' },
-    { day: 'Donnerstag' },
-    { day: 'Freitag' },
-    { day: 'Samstag' },
-    { day: 'Sonntag' }
+    { preferredDay: 'Montag' },
+    { preferredDay: 'Dienstag' },
+    { preferredDay: 'Mittwoch' },
+    { preferredDay: 'Donnerstag' },
+    { preferredDay: 'Freitag' },
+    { preferredDay: 'Samstag' },
+    { preferredDay: 'Sonntag' }
   ];
   times = [
-    { time: 'Vormittags' },
-    { time: 'Mittags' },
-    { time: 'Nachmittags' }
+    { preferredTime: 'Vormittags' },
+    { preferredTime: 'Mittags' },
+    { preferredTime: 'Nachmittags' }
   ];
   options = [
-    { option: 'Ganztägige Session (Große Projekte / Ganze Körperteile)' },
-    { option: 'Mehrere Tattoos' },
+    { projectInformation: 'Ganztägige Session (Große Projekte / Ganze Körperteile)' },
+    { projectInformation: 'Mehrere Tattoos' },
   ];
 
   myForm: FormGroup;
@@ -79,22 +79,21 @@ export class ContactFormComponent implements OnInit {
 
   ngOnInit() {
     this.myForm = this.fb.group({
-      Pronouns: new FormControl('', [Validators.required]),
-      PreName: new FormControl('', [Validators.required]),
-      LastName: new FormControl('', [Validators.required]),
-      Email: new FormControl('', [Validators.required]),
-      Instagram: new FormControl('', [Validators.required]),
-      Phone: new FormControl('', [Validators.required]),
-      Description: new FormControl('', [Validators.required]),
-      file: new FormControl('', [Validators.required]),
-      body: this.fb.array([]),
-      DesignType: new FormControl('', [Validators.required]),
-      day: this.fb.array([]),
-      time: this.fb.array([]),
-      option: this.fb.array([]),
-      recurring: new FormControl('', [Validators.required]),
-      accepted: new FormControl('', [Validators.required])
-    });
+      pronouns: new FormControl('', [Validators.required]),
+      firstname: new FormControl('', [Validators.required]),
+      lastname: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required]),
+      instagram: new FormControl('', [Validators.required]),
+      phonenumber: new FormControl('', [Validators.required]),
+      image: new FormControl('', [Validators.required]),
+      description: new FormControl('', [Validators.required]),
+      bodypart: this.fb.array([]),
+      designtype: new FormControl('', [Validators.required]),
+      preferredDay: this.fb.array([]),
+      preferredTime: this.fb.array([]),
+      projectInformation: this.fb.array([]),
+      returningCustomer: new FormControl('', [Validators.required])
+        });
   }
 
   onChangeBodyPart(bodyPart: string, isChecked: boolean) {
@@ -107,33 +106,33 @@ export class ContactFormComponent implements OnInit {
       bodyPartArray.removeAt(index);
     }
   }
-  onChangeDays(day: string, isChecked: boolean) {
-    const dayFormArray = <FormArray>this.myForm.controls.day;
+  onChangeDays(preferredDay: string, isChecked: boolean) {
+    const dayFormArray = <FormArray>this.myForm.controls.preferredDay;
 
     if (isChecked) {
-      dayFormArray.push(new FormControl(day));
+      dayFormArray.push(new FormControl(preferredDay));
     } else {
-      let index = dayFormArray.controls.findIndex((x) => x.value == day);
+      let index = dayFormArray.controls.findIndex((x) => x.value == preferredDay);
       dayFormArray.removeAt(index);
     }
   }
-  onChangeTimes(time: string, isChecked: boolean) {
-    const timeFormArray = <FormArray>this.myForm.controls.time;
+  onChangeTimes(preferredTime: string, isChecked: boolean) {
+    const timeFormArray = <FormArray>this.myForm.controls.preferredTime;
 
     if (isChecked) {
-      timeFormArray.push(new FormControl(time));
+      timeFormArray.push(new FormControl(preferredTime));
     } else {
-      let index = timeFormArray.controls.findIndex((x) => x.value == time);
+      let index = timeFormArray.controls.findIndex((x) => x.value == preferredTime);
       timeFormArray.removeAt(index);
     }
   }
-  onChangeOptions(option: string, isChecked: boolean) {
-    const optionFormArray = <FormArray>this.myForm.controls.option;
+  onChangeOptions(projectInformation: string, isChecked: boolean) {
+    const optionFormArray = <FormArray>this.myForm.controls.projectInformation;
 
     if (isChecked) {
-      optionFormArray.push(new FormControl(option));
+      optionFormArray.push(new FormControl(projectInformation));
     } else {
-      let index = optionFormArray.controls.findIndex((x) => x.value == option);
+      let index = optionFormArray.controls.findIndex((x) => x.value == projectInformation);
       optionFormArray.removeAt(index);
     }
   }
@@ -145,10 +144,10 @@ export class ContactFormComponent implements OnInit {
   enroll(myForm: FormGroup) {
    return this._http.post<any>(this._url, myForm);
   }
-  onSubmit(myForm: FormGroup) {
+  onSubmit() {
     console.warn('Your order has been submitted', this.myForm.value);
     this.myForm.reset();
-    this.enroll(myForm).subscribe(
+    this.enroll(this.myForm).subscribe(
       data => console.log('yes', data),
       error => console.log('no :(', error)
     )
