@@ -10,39 +10,40 @@ import { FormGroup, FormBuilder, FormArray, FormControl, Validators, NgForm} fro
 })
 export class ContactFormComponent implements OnInit {
   
-  _url: 'https://backend-u7nowymugq-ew.a.run.app:8080/junkietattoos/receiveNewContact';
+  _url = 'https://backend-u7nowymugq-ew.a.run.app:8080/junkietattoos/receiveNewContact';
+
   
-  bodyParts = [
-    { bodyPart: 'Gesicht' },
-    { bodyPart: 'Hals' },
-    { bodyPart: 'Nacken' },
-    { bodyPart: 'Brust' },
-    { bodyPart: 'Rippe(Oben, unter der Brust)' },
-    { bodyPart: 'Rippe(Mitte)' },
-    { bodyPart: 'Unterer Brust Bereich / Oberer Bauch / Underboob' },
-    { bodyPart: 'Bauch' },
-    { bodyPart: 'Rücken (Gesamter Rücken)' },
-    { bodyPart: 'Rücken (Oben)' },
-    { bodyPart: 'Rücken (Unten' },
-    { bodyPart: 'Gesamter Arm / Full arm sleeve' },
-    { bodyPart: 'Oberarm (Biceps)' },
-    { bodyPart: 'Oberarm (Triceps)' },
-    { bodyPart: 'Oberarm (Innen)' },
-    { bodyPart: 'Oberarm (Außen)' },
-    { bodyPart: 'Unterarm (Innen)' },
-    { bodyPart: 'Unterarm (Außen)' },
-    { bodyPart: 'Unterarm (Innen + Außen) / Half arm sleeve' },
-    { bodyPart: 'Hand (Rücken)' },
-    { bodyPart: 'Hand (Innenfläche)' },
-    { bodyPart: 'Gesäß / Po' },
-    { bodyPart: 'Gesamtes Bein / Full leg sleeve' },
-    { bodyPart: 'Oberschenkel (Vorne)' },
-    { bodyPart: 'Oberschenkel (Seite)' },
-    { bodyPart: 'Schienbein' },
-    { bodyPart: 'Wade' },
-    { bodyPart: 'Schienbein + Wade / Half leg sleeve' },
-    { bodyPart: 'Füße' },
-    { bodyPart: 'Finger' }
+  bodyparts = [
+    { bodypart: 'Gesicht' },
+    { bodypart: 'Hals' },
+    { bodypart: 'Nacken' },
+    { bodypart: 'Brust' },
+    { bodypart: 'Rippe(Oben, unter der Brust)' },
+    { bodypart: 'Rippe(Mitte)' },
+    { bodypart: 'Unterer Brust Bereich / Oberer Bauch / Underboob' },
+    { bodypart: 'Bauch' },
+    { bodypart: 'Rücken (Gesamter Rücken)' },
+    { bodypart: 'Rücken (Oben)' },
+    { bodypart: 'Rücken (Unten' },
+    { bodypart: 'Gesamter Arm / Full arm sleeve' },
+    { bodypart: 'Oberarm (Biceps)' },
+    { bodypart: 'Oberarm (Triceps)' },
+    { bodypart: 'Oberarm (Innen)' },
+    { bodypart: 'Oberarm (Außen)' },
+    { bodypart: 'Unterarm (Innen)' },
+    { bodypart: 'Unterarm (Außen)' },
+    { bodypart: 'Unterarm (Innen + Außen) / Half arm sleeve' },
+    { bodypart: 'Hand (Rücken)' },
+    { bodypart: 'Hand (Innenfläche)' },
+    { bodypart: 'Gesäß / Po' },
+    { bodypart: 'Gesamtes Bein / Full leg sleeve' },
+    { bodypart: 'Oberschenkel (Vorne)' },
+    { bodypart: 'Oberschenkel (Seite)' },
+    { bodypart: 'Schienbein' },
+    { bodypart: 'Wade' },
+    { bodypart: 'Schienbein + Wade / Half leg sleeve' },
+    { bodypart: 'Füße' },
+    { bodypart: 'Finger' }
   ];
 
   designs = [
@@ -96,14 +97,14 @@ export class ContactFormComponent implements OnInit {
         });
   }
 
-  onChangeBodyPart(bodyPart: string, isChecked: boolean) {
-    const bodyPartArray = <FormArray>this.myForm.controls.body;
+  onChangeBodyPart(bodypart: string, isChecked: boolean) {
+    const bodypartArray = <FormArray>this.myForm.controls.bodypart;
 
     if (isChecked) {
-      bodyPartArray.push(new FormControl(bodyPart));
+      bodypartArray.push(new FormControl(bodypart));
     } else {
-      let index = bodyPartArray.controls.findIndex((x) => x.value == bodyPart);
-      bodyPartArray.removeAt(index);
+      let index = bodypartArray.controls.findIndex((x) => x.value == bodypart);
+      bodypartArray.removeAt(index);
     }
   }
   onChangeDays(preferredDay: string, isChecked: boolean) {
@@ -148,8 +149,8 @@ export class ContactFormComponent implements OnInit {
     console.warn('Your order has been submitted', this.myForm.value);
     this.myForm.reset();
     this.enroll(this.myForm.value).subscribe(
-      data => console.log('yes', data),
-      error => console.log('no :(', error)
+      data => console.log('Email sent successfully', data),
+      error => console.log('Email didnt sent :(', error)
     )
   }
 }

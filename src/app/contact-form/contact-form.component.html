@@ -67,9 +67,9 @@
 
         <div class="col-12">
           <div class="mb-3">
-            <div *ngFor="let data of bodyParts" class="item">
-              <input type="checkbox" (change)="onChangeBodyPart(data.bodyPart, $event.target.checked)" />
-              {{ data.bodyPart }}<br />
+            <div *ngFor="let data of bodyparts" class="item">
+              <input type="checkbox" (change)="onChangeBodyPart(data.bodypart, $event.target.checked)" />
+              {{ data.bodypart }}<br />
             </div>
           </div>
         </div>
@@ -113,16 +113,16 @@
         </div>
         <div class="col-12">
           <div class="mb-3">
-            <label class="form-label" for="recurringCustomer">{{'CONTACT.RECURRING_CUSTOMER' | translate}}</label>
+            <label class="form-label" for="returningCustomer">{{'CONTACT.RECURRING_CUSTOMER' | translate}}</label>
             <div class="mb-2">
               <small class="form-text text-muted">{{'CONTACT.DESIGN' | translate}}</small>
             </div>
-            <input id="recurringCustomer" type="text" formControlName="recurringCustomer" class="item" />
+            <input id="returningCustomer" type="text" formControlName="returningCustomer" class="item" />
           </div>
         </div>
         <div class="col-12">
           <div class="mb-3">
-            <input id="accepted" type="checkbox" formControlName="accepted" class="item" >
+            <input id="accepted" type="checkbox" class="item" >
             <span>
               {{'CONTACT.AGREE_1' | translate}}
             </span>
