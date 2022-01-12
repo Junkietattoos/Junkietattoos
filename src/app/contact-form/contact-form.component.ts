@@ -149,7 +149,7 @@ export class ContactFormComponent implements OnInit {
     this.myForm.reset();
     this.enroll(this.myForm.value).subscribe(
       data => console.log('yes', data),
-      error => console.log('no :(', error)
+      error => console.log(error)
     )
   }
 }
