@@ -96,10 +96,16 @@
 
         <div class="col-12">
           <div class="mb-3">
-            <div *ngFor="let data of times" class="item">
-              <input type="checkbox" (change)="onChangeTimes(data.preferredTime, $event.target.checked)" />
-              {{ data.preferredTime }}<br />
-            </div>
+            <input id="name" type="radio" formControlName="preferredTime" value="Vormittags" class="item">
+          <span>{{'CONTACT.MORNING' | translate}}</span>
+        </div>
+        <div class="col-12">
+          <input id="name" type="radio" formControlName="preferredTime" value="Mittag" class="item">
+          <span>{{'CONTACT.NOON' | translate}}</span>
+        </div>
+        <div class="col-12">
+          <input id="name" type="radio" formControlName="preferredTime" value="Nachmittag" class="item">
+          <span>{{'CONTACT.AFTERNOON' | translate}}</span>
           </div>
         </div>
 

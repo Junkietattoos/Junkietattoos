@@ -61,11 +61,6 @@ export class ContactFormComponent implements OnInit {
     { preferredDay: 'Samstag' },
     { preferredDay: 'Sonntag' }
   ];
-  times = [
-    { preferredTime: 'Vormittags' },
-    { preferredTime: 'Mittags' },
-    { preferredTime: 'Nachmittags' }
-  ];
   options = [
     { projectInformation: 'Ganztägige Session (Große Projekte / Ganze Körperteile)' },
     { projectInformation: 'Mehrere Tattoos' },
@@ -91,7 +86,7 @@ export class ContactFormComponent implements OnInit {
       bodypart: this.fb.array([]),
       designtype: new FormControl('', [Validators.required]),
       preferredDay: this.fb.array([]),
-      preferredTime: this.fb.array([]),
+      preferredTime: new FormControl('', [Validators.required]),
       projectInformation: this.fb.array([]),
       returningCustomer: new FormControl('', [Validators.required])
         });
@@ -115,16 +110,6 @@ export class ContactFormComponent implements OnInit {
     } else {
       let index = dayFormArray.controls.findIndex((x) => x.value == preferredDay);
       dayFormArray.removeAt(index);
-    }
-  }
-  onChangeTimes(preferredTime: string, isChecked: boolean) {
-    const timeFormArray = <FormArray>this.myForm.controls.preferredTime;
-
-    if (isChecked) {
-      timeFormArray.push(new FormControl(preferredTime));
-    } else {
-      let index = timeFormArray.controls.findIndex((x) => x.value == preferredTime);
-      timeFormArray.removeAt(index);
     }
   }
   onChangeOptions(projectInformation: string, isChecked: boolean) {
