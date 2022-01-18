@@ -47,10 +47,11 @@ export class ContactFormComponent implements OnInit {
   ];
 
   designtype = [
-    { designType: 'Flash' },
-    { designType: 'Custom' },
-    { designType: 'Nicht bekannt' }
+    'Flash', 
+    'Custom', 
+    'Nicht bekannt'  
   ];
+
   days = [
     { preferredDay: 'Montag' },
     { preferredDay: 'Dienstag' },
@@ -65,11 +66,10 @@ export class ContactFormComponent implements OnInit {
     { projectInformation: 'Mehrere Tattoos' },
   ];
 
-  times = [
-    { preferredTime: 'Vormittags'},
-    { preferredTime: 'Mittag'},
-    { preferredTime: 'Nachmittag'},
-
+  times = [ 
+  'Vormittags',
+  'Mittag',
+  'Nachmittag'
   ]
 
   myForm: FormGroup;
@@ -87,7 +87,6 @@ export class ContactFormComponent implements OnInit {
       email: new FormControl('', [Validators.required]),
       instagram: new FormControl('', [Validators.required]),
       phonenumber: new FormControl('', [Validators.required]),
-    //  image: new FormControl('', [Validators.required]),
       description: new FormControl('', [Validators.required]),
       bodypart: this.fb.array([]),
       designType: new FormControl('', [Validators.required]),

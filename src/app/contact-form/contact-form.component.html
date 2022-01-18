@@ -48,16 +48,6 @@
             <input id="name" type="text" formControlName="phonenumber" class="full">
           </div>
         </div>
-        <!--<div class="col-12">
-          <div class="mb-3">
-            <input type="file" accept="image/*" formControlName="image" class="full" />
-            <small class="form-text text-muted">{{'CONTACT.UPLOAD_SIZE' | translate}}</small>
-          </div>
-        </div> -->
-        <!-- Validierung    <div *ngIf="f.file.touched && f.file.invalid" class="alert alert-danger">
-          <div *ngIf="f.file.errors.required">File is required.</div>
-      </div>
-    -->
         <div class="col-12">
           <div class="mb-3">
             <label class="form-label" for="Description">{{'CONTACT.DESCRIPTION' | translate}}</label>
@@ -77,7 +67,7 @@
           <div class="mb-3">
             <div *ngFor="let data of designtype" class="item">
               <input type="radio" formControlName="designType" [value]='data' />
-              {{ data.designType }}<br />
+              {{ data }}<br />
             </div>
           </div>
         </div>
@@ -93,7 +83,7 @@
           <div class="mb-3">
             <div *ngFor="let data of times" class="item">
               <input type="radio" formControlName="preferredTime" [value]='data' />
-              {{ data.preferredTime }}<br />
+              {{ data }}<br />
             </div>
           </div>
         </div>
