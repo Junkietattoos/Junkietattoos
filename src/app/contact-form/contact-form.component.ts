@@ -49,7 +49,7 @@ export class ContactFormComponent implements OnInit {
   designtype = [
     'Flash', 
     'Custom', 
-    'Nicht bekannt'  
+    'Nicht bekannt'
   ];
 
   days = [
@@ -132,7 +132,7 @@ export class ContactFormComponent implements OnInit {
     return this.myForm.controls;
   }
 
-  enroll(myForm: FormGroup) {
+  enroll(myForm: any) {
    return this._http.post<any>(this._url, myForm);
   }
   onSubmit() {
