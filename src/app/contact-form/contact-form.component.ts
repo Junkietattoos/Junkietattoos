@@ -46,11 +46,10 @@ export class ContactFormComponent implements OnInit {
     { bodypart: 'Finger' }
   ];
 
-  designs = [
-    { design: '1237' },
-    { design: '1236' },
-    { design: '1235' },
-    { design: '1234' },
+  designtype = [
+    { designType: 'Flash' },
+    { designType: 'Custom' },
+    { designType: 'Nicht bekannt' }
   ];
   days = [
     { preferredDay: 'Montag' },
@@ -65,6 +64,13 @@ export class ContactFormComponent implements OnInit {
     { projectInformation: 'Ganztägige Session (Große Projekte / Ganze Körperteile)' },
     { projectInformation: 'Mehrere Tattoos' },
   ];
+
+  times = [
+    { preferredTime: 'Vormittags'},
+    { preferredTime: 'Mittag'},
+    { preferredTime: 'Nachmittag'},
+
+  ]
 
   myForm: FormGroup;
 
@@ -81,10 +87,10 @@ export class ContactFormComponent implements OnInit {
       email: new FormControl('', [Validators.required]),
       instagram: new FormControl('', [Validators.required]),
       phonenumber: new FormControl('', [Validators.required]),
-      image: new FormControl('', [Validators.required]),
+    //  image: new FormControl('', [Validators.required]),
       description: new FormControl('', [Validators.required]),
       bodypart: this.fb.array([]),
-      designtype: new FormControl('', [Validators.required]),
+      designType: new FormControl('', [Validators.required]),
       preferredDay: this.fb.array([]),
       preferredTime: new FormControl('', [Validators.required]),
       projectInformation: this.fb.array([]),
@@ -122,7 +128,7 @@ export class ContactFormComponent implements OnInit {
       optionFormArray.removeAt(index);
     }
   }
-
+  
   get f(){
     return this.myForm.controls;
   }

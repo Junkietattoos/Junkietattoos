@@ -48,12 +48,12 @@
             <input id="name" type="text" formControlName="phonenumber" class="full">
           </div>
         </div>
-        <div class="col-12">
+        <!--<div class="col-12">
           <div class="mb-3">
             <input type="file" accept="image/*" formControlName="image" class="full" />
             <small class="form-text text-muted">{{'CONTACT.UPLOAD_SIZE' | translate}}</small>
           </div>
-        </div>
+        </div> -->
         <!-- Validierung    <div *ngIf="f.file.touched && f.file.invalid" class="alert alert-danger">
           <div *ngIf="f.file.errors.required">File is required.</div>
       </div>
@@ -74,16 +74,12 @@
           </div>
         </div>
         <div class="col-12">
-          <input id="name" type="radio" formControlName="designtype" value="Flash" class="item">
-          <span>{{'CONTACT.FLASH' | translate}}</span>
-        </div>
-        <div class="col-12">
-          <input id="name" type="radio" formControlName="designtype" value="Custom" class="item">
-          <span>{{'CONTACT.CUSTOM' | translate}}</span>
-        </div>
-        <div class="col-12">
-          <input id="name" type="radio" formControlName="designtype" value="Nicht bekannt" class="item">
-          <span>{{'CONTACT.UNKNOWN' | translate}}</span>
+          <div class="mb-3">
+            <div *ngFor="let data of designtype" class="item">
+              <input type="radio" formControlName="designType" [value]='data' />
+              {{ data.designType }}<br />
+            </div>
+          </div>
         </div>
         <div class="col-12">
           <div class="mb-3">
@@ -93,21 +89,15 @@
             </div>
           </div>
         </div>
-
         <div class="col-12">
           <div class="mb-3">
-            <input id="name" type="radio" formControlName="preferredTime" value="Vormittags" class="item">
-          <span>{{'CONTACT.MORNING' | translate}}</span>
-        </div>
-        <div class="col-12">
-          <input id="name" type="radio" formControlName="preferredTime" value="Mittag" class="item">
-          <span>{{'CONTACT.NOON' | translate}}</span>
-        </div>
-        <div class="col-12">
-          <input id="name" type="radio" formControlName="preferredTime" value="Nachmittag" class="item">
-          <span>{{'CONTACT.AFTERNOON' | translate}}</span>
+            <div *ngFor="let data of times" class="item">
+              <input type="radio" formControlName="preferredTime" [value]='data' />
+              {{ data.preferredTime }}<br />
+            </div>
           </div>
         </div>
+       
 
         <div class="col-12">
           <div class="mb-3">
