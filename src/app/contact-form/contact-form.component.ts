@@ -68,8 +68,8 @@ export class ContactFormComponent implements OnInit {
 
   times = [ 
   'Vormittags',
-  'Mittag',
-  'Nachmittag'
+  'Mittags',
+  'Nachmittags'
   ]
 
   myForm: FormGroup;
