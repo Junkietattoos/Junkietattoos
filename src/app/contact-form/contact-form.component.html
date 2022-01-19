@@ -26,37 +26,38 @@
         </div>
         <div class="col-sm-12 col-md-5">
           <div class="mb-3">
-            <label class="form-label" for="lastname">{{'CONTACT.LAST_NAME' | translate}}</label>
+           <label class="form-label" for="lastName">{{'CONTACT.LAST_NAME' | translate}}</label>
             <input id="lastname" type="text" formControlName="lastName" class="full">
           </div>
         </div>
         <div class="col-sm-12 col-md-5">
           <div class="mb-3">
-            <label class="form-label" for="Email">{{'CONTACT.EMAIL' | translate}}</label>
+            <label class="form-label" for="email">{{'CONTACT.EMAIL' | translate}}</label>
             <input id="email" type="text" formControlName="email" class="full">
           </div>
         </div>
         <div class="col-sm-12 col-md-5">
           <div class="mb-3">
-            <label class="form-label" for="Instagram">{{'CONTACT.INSTAGRAM' | translate}}</label>
+            <label class="form-label" for="instagram">{{'CONTACT.INSTAGRAM' | translate}}</label>
             <input id="name" type="text" formControlName="instagram" class="full">
           </div>
         </div>
         <div class="col-12">
           <div class="mb-3">
-            <label class="form-label" for="phone">{{'CONTACT.PHONE' | translate}}</label>
+            <label class="form-label" for="phonenumber">{{'CONTACT.PHONE' | translate}}</label>
             <input id="name" type="text" formControlName="phonenumber" class="full">
           </div>
         </div>
         <div class="col-12">
           <div class="mb-3">
-            <label class="form-label" for="Description">{{'CONTACT.DESCRIPTION' | translate}}</label>
+            <label class="form-label" for="description">{{'CONTACT.DESCRIPTION' | translate}}</label>
             <input id="name" type="textarea" formControlName="description" class="item" class="full">
           </div>
         </div>
 
         <div class="col-12">
           <div class="mb-3">
+            <label class="form-label" for="bodyPart">{{'CONTACT.BODYPARTS' | translate}}</label>
             <div *ngFor="let data of bodyparts" class="item">
               <input type="checkbox" (change)="onChangeBodyPart(data.bodypart, $event.target.checked)" />
               {{ data.bodypart }}<br />
@@ -65,6 +66,7 @@
         </div>
         <div class="col-12">
           <div class="mb-3">
+            <label class="form-label" for="designType">{{'CONTACT.DESIGNTYPE' | translate}}</label>
             <div *ngFor="let data of designtype" class="item">
               <input type="radio" formControlName="designType" [value]='data' />
               {{ data }}<br />
@@ -73,6 +75,7 @@
         </div>
         <div class="col-12">
           <div class="mb-3">
+            <label class="form-label" for="preferredDay">{{'CONTACT.PREFERRED_DAY' | translate}}</label>
             <div *ngFor="let data of days" class="item">
               <input type="checkbox" (change)="onChangeDays(data.preferredDay, $event.target.checked)" />
               {{ data.preferredDay }}<br />
@@ -81,6 +84,7 @@
         </div>
         <div class="col-12">
           <div class="mb-3">
+            <label class="form-label" for="preferredTime">{{'CONTACT.PREFERRED_TIME' | translate}}</label>
             <div *ngFor="let data of times" class="item">
               <input type="radio" formControlName="preferredTime" [value]='data' />
               {{ data }}<br />
@@ -91,6 +95,7 @@
 
         <div class="col-12">
           <div class="mb-3">
+            <label class="form-label" for="projectInformation">{{'CONTACT.MORE_INFO' | translate}}</label>
             <div *ngFor="let data of options" class="item">
               <input type="checkbox" (change)="onChangeOptions(data.projectInformation, $event.target.checked)" />
               {{ data.projectInformation }}<br />
