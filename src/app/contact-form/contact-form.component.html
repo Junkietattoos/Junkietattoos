@@ -15,50 +15,50 @@
         <div class="col-sm-12 col-md-2">
           <div class="mb-3">
             <label class="form-label" for="Pronouns">{{'CONTACT.PRONOUNS' | translate}}</label>
-            <input id="Pronouns" type="text" formControlName="pronouns" class="full" name="name">
+            <input id="Pronouns" type="text" formControlName="pronouns" class="full" name="name" required>
           </div>
         </div>
         <div class="col-sm-12 col-md-5">
           <div class="mb-3">
             <label class="form-label" for="prename">{{'CONTACT.FIRST_NAME' | translate}}</label>
-            <input id="prename" type="text" formControlName="firstName" class="full" name="email">
+            <input id="prename" type="text" formControlName="firstName" class="full" name="email" required>
           </div>
         </div>
         <div class="col-sm-12 col-md-5">
           <div class="mb-3">
-           <label class="form-label" for="lastName">{{'CONTACT.LAST_NAME' | translate}}</label>
-            <input id="lastname" type="text" formControlName="lastName" class="full">
+            <label class="form-label" for="lastName">{{'CONTACT.LAST_NAME' | translate}}</label>
+            <input id="lastname" type="text" formControlName="lastName" class="full" required>
           </div>
         </div>
         <div class="col-sm-12 col-md-5">
           <div class="mb-3">
             <label class="form-label" for="email">{{'CONTACT.EMAIL' | translate}}</label>
-            <input id="email" type="text" formControlName="email" class="full">
+            <input id="email" type="text" formControlName="email" class="full" required>
           </div>
         </div>
         <div class="col-sm-12 col-md-5">
           <div class="mb-3">
             <label class="form-label" for="instagram">{{'CONTACT.INSTAGRAM' | translate}}</label>
-            <input id="name" type="text" formControlName="instagram" class="full">
+            <input id="name" type="text" formControlName="instagram" class="full" required>
           </div>
         </div>
         <div class="col-12">
           <div class="mb-3">
             <label class="form-label" for="phonenumber">{{'CONTACT.PHONE' | translate}}</label>
-            <input id="name" type="text" formControlName="phonenumber" class="full">
+            <input id="name" type="text" formControlName="phonenumber" class="full" required>
           </div>
         </div>
         <div class="col-12">
           <div class="mb-3">
             <label class="form-label" for="description">{{'CONTACT.DESCRIPTION' | translate}}</label>
-            <input id="name" type="textarea" formControlName="description" class="item" class="full">
+            <input id="name" type="textarea" formControlName="description" class="item" class="full" required>
           </div>
         </div>
 
         <div class="col-12">
           <div class="mb-3">
             <label class="form-label" for="bodyPart">{{'CONTACT.BODYPARTS' | translate}}</label>
-            <div *ngFor="let data of bodyparts" class="item">
+            <div *ngFor="let data of bodyparts" class="item" required (click)="checkedParts = true">
               <input type="checkbox" (change)="onChangeBodyPart(data.bodypart, $event.target.checked)" />
               {{ data.bodypart }}<br />
             </div>
@@ -67,8 +67,8 @@
         <div class="col-12">
           <div class="mb-3">
             <label class="form-label" for="designType">{{'CONTACT.DESIGNTYPE' | translate}}</label>
-            <div *ngFor="let data of designtype" class="item">
-              <input type="radio" formControlName="designType" [value]='data' />
+            <div *ngFor="let data of designtype" class="item" required>
+              <input type="radio" formControlName="designType" [value]='data' required />
               {{ data }}<br />
             </div>
           </div>
@@ -76,7 +76,7 @@
         <div class="col-12">
           <div class="mb-3">
             <label class="form-label" for="preferredDay">{{'CONTACT.PREFERRED_DAY' | translate}}</label>
-            <div *ngFor="let data of days" class="item">
+            <div *ngFor="let data of days" class="item" required (click)="checkedDays = true">
               <input type="checkbox" (change)="onChangeDays(data.preferredDay, $event.target.checked)" />
               {{ data.preferredDay }}<br />
             </div>
@@ -85,13 +85,12 @@
         <div class="col-12">
           <div class="mb-3">
             <label class="form-label" for="preferredTime">{{'CONTACT.PREFERRED_TIME' | translate}}</label>
-            <div *ngFor="let data of times" class="item">
-              <input type="radio" formControlName="preferredTime" [value]='data' />
+            <div *ngFor="let data of times" class="item" required>
+              <input type="radio" formControlName="preferredTime" [value]='data' required />
               {{ data }}<br />
             </div>
           </div>
         </div>
-       
 
         <div class="col-12">
           <div class="mb-3">
@@ -108,23 +107,30 @@
             <div class="mb-2">
               <small class="form-text text-muted">{{'CONTACT.DESIGN' | translate}}</small>
             </div>
-            <input id="returningCustomer" type="text" formControlName="returningCustomer" class="item" />
+            <textarea id="returningCustomer" type="textarea" formControlName="returningCustomer"
+              class="returningCustomer"> </textarea>
           </div>
         </div>
         <div class="col-12">
           <div class="mb-3">
-            <input id="accepted" type="checkbox" class="item" >
-            <span>
+            <input id="accepted" type="checkbox" class="item" (click)="checked = true"
+              [disabled]="!myForm?.valid || !checkedParts || !checkedDays">
+            <span class="agree">
               {{'CONTACT.AGREE_1' | translate}}
             </span>
-            <ul class="pl-1">
-              <li class="fw-bold">  {{'CONTACT.AGREE_2' | translate}}</li>
-              <li class="fw-bold">  {{'CONTACT.AGREE_3' | translate}}</li>
-              <li class="fw-bold">  {{'CONTACT.AGREE_4' | translate}}</li>
+            <ul class="pl-1 margin-left">
+              <li class="fw-bold"> {{'CONTACT.AGREE_2' | translate}}</li>
+              <li class="fw-bold"> {{'CONTACT.AGREE_3' | translate}}</li>
+              <li class="fw-bold"> {{'CONTACT.AGREE_4' | translate}}</li>
             </ul>
           </div>
         </div>
-     <button class="btn btn-dark" type="submit"  >  {{'CONTACT.SEND' | translate}}</button> 
+        <div [class.not-allowed]="!myForm?.valid || !checked || !checkedParts || !checkedDays">
+          <button class="btn btn-dark margin-left" type="submit"
+            [class.disabled]="!myForm?.valid || !checked || !checkedParts || !checkedDays"> {{'CONTACT.SEND' |
+            translate}}</button> <br>
+            <span class="required margin-left"> {{'CONTACT.REQUIRED' | translate}}</span>
+        </div>
       </div>
     </form>
   </div>

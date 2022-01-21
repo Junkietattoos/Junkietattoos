@@ -11,7 +11,6 @@ import { FormGroup, FormBuilder, FormArray, FormControl, Validators, NgForm} fro
 export class ContactFormComponent implements OnInit {
   
   _url = 'https://backend-u7nowymugq-ew.a.run.app/junkietattoos/receiveNewContact/';
-
   
   bodyparts = [
     { bodypart: 'Gesicht' },
@@ -73,6 +72,10 @@ export class ContactFormComponent implements OnInit {
   ]
 
   myForm: FormGroup;
+  checked = false;
+  checkedParts = false;
+  checkedDays = false;
+
 
   constructor(
     private fb: FormBuilder,
@@ -93,7 +96,7 @@ export class ContactFormComponent implements OnInit {
       preferredDay: this.fb.array([]),
       preferredTime: new FormControl('', [Validators.required]),
       projectInformation: this.fb.array([]),
-      returningCustomer: new FormControl('', [Validators.required])
+      returningCustomer: new FormControl('', [])
         });
   }
 
@@ -128,10 +131,6 @@ export class ContactFormComponent implements OnInit {
     }
   }
   
-  get f(){
-    return this.myForm.controls;
-  }
-
   enroll(myForm: any) {
    return this._http.post<any>(this._url, myForm);
   }

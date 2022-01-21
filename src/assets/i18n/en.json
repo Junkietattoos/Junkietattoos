@@ -6,7 +6,7 @@
 
     "FOOTER": {
       "COPYRIGHT":{
-          "TITLE": "Lucas Idk, 2021",
+          "TITLE": "Lucas Jakubczik, 2021",
           "LOCATION": "  Blank Tattoostudio"
       },
       "CONTACT": {
@@ -28,7 +28,7 @@
   "HOME": {
       "HELLO": "Hello",
       "ALIAS": "As my alias already reveals:",
-      "DO": "I tattoo people! And it’s your turn soon!",
+      "DO": "I tattoo people! And its your turn soon!",
       "BUTTON": "Booking"    
   },
   "IMPRINT": {
@@ -60,6 +60,7 @@
     "AGREE_2": "I am over 18 years old.",
     "AGREE_3": "I am aware that I will lose any claims to prepayment if I cancel the chosen appointment later than 48 hours before the start.",
     "AGREE_4": "I agree to wear a medical mouth and nose cover during the appointment.",
-    "SEND": "Submit request"
+    "SEND": "Submit request",
+    "REQUIRED": "All entries with an (*) are mandatory."
 }
 }
