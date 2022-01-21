@@ -31,3 +31,26 @@ label {
 .agree{
     font-weight: bold;
 }
+.disableButton {
+    opacity: 0.5 !important;
+    pointer-events: none;
+}
+.alert {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    margin-left: 16px;
+    width: 100%;
+    margin-right: 32px;
+    margin-top: 16px;
+    &.success {
+    background: mediumspringgreen;
+    color: green;
+    }
+    &.error{
+    background: red;
+    color: darkred;
+    }
+}

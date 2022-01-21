@@ -11,6 +11,13 @@ import { FormGroup, FormBuilder, FormArray, FormControl, Validators, NgForm} fro
 export class ContactFormComponent implements OnInit {
   
   _url = 'https://backend-u7nowymugq-ew.a.run.app/junkietattoos/receiveNewContact/';
+  myForm: FormGroup;
+  checked = false;
+  checkedParts = false;
+  checkedDays = false;
+  disableButton = false;
+  showMsgSuccess = false;
+  showMsgError = false;
   
   bodyparts = [
     { bodypart: 'Gesicht' },
@@ -70,11 +77,6 @@ export class ContactFormComponent implements OnInit {
   'Mittags',
   'Nachmittags'
   ]
-
-  myForm: FormGroup;
-  checked = false;
-  checkedParts = false;
-  checkedDays = false;
 
 
   constructor(
@@ -137,8 +139,14 @@ export class ContactFormComponent implements OnInit {
   onSubmit() {
     console.warn('Your order has been submitted', this.myForm.value);
     this.enroll(this.myForm.value).subscribe(
-      data => console.log('Email sent successfully', data),
-      error => console.log('Email didnt sent :(', error)
-    );
+      data => {
+        this.showMsgSuccess = true;
+        console.log('Email sent successfully', data);
+      },
+      error => {0
+        this.showMsgError = true;
+        console.log('Email didnt sent :(', error);
+      });
+    this.disableButton =  true;
   }
 }

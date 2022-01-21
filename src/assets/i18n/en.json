@@ -61,6 +61,8 @@
     "AGREE_3": "I am aware that I will lose any claims to prepayment if I cancel the chosen appointment later than 48 hours before the start.",
     "AGREE_4": "I agree to wear a medical mouth and nose cover during the appointment.",
     "SEND": "Submit request",
-    "REQUIRED": "All entries with an (*) are mandatory."
+    "REQUIRED": "All entries with an (*) are mandatory.",
+    "SUCCESS": "Email has been sent!",
+    "ERROR": "Email coudlnt be sent. Please try again later or contact us"
 }
 }

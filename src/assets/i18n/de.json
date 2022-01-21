@@ -62,6 +62,8 @@
         "AGREE_3": "Ich bin mir bewusst eventuelle Ansprüche auf Vorkassen-Zahlungen zu verlieren, sofern ich den gewählten Termin später als 48 Stunden vor Beginn absage.",
         "AGREE_4": "Ich bin damit einverstanden während des Termins eine medizinische Mund-Nasen-Bedeckung zu tragen.",
         "SEND": "Anfrage abschicken",
-        "REQUIRED": "Alle Angaben mit einem (*) sind verpflichtend."
+        "REQUIRED": "Alle Angaben mit einem (*) sind verpflichtend.",
+        "SUCCESS": "Email wurde erfolgreich versandt!",
+        "ERROR": "Email konnte nicht versendet werden, versuchen Sie es später erneut oder kontaktieren Sie uns"
     }
   }

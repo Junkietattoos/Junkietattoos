@@ -127,9 +127,15 @@
         </div>
         <div [class.not-allowed]="!myForm?.valid || !checked || !checkedParts || !checkedDays">
           <button class="btn btn-dark margin-left" type="submit"
-            [class.disabled]="!myForm?.valid || !checked || !checkedParts || !checkedDays"> {{'CONTACT.SEND' |
+            [class.disabled]="!myForm?.valid || !checked || !checkedParts || !checkedDays" [class.disableButton]="disableButton"> {{'CONTACT.SEND' |
             translate}}</button> <br>
             <span class="required margin-left"> {{'CONTACT.REQUIRED' | translate}}</span>
+        </div>
+        <div *ngIf="showMsgSuccess" class="alert success">
+          {{'CONTACT.SUCCESS' | translate}}
+        </div>
+        <div *ngIf="showMsgError" class="alert error">
+          {{'CONTACT.ERROR' | translate}}
         </div>
       </div>
     </form>
