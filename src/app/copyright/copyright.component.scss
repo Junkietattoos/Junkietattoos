@@ -1,22 +1,28 @@
 body{
-    position: relative;
-    top: 0;
-img{
-    height: 30rem;
-    width: 100%;
-    z-index:1;
-    position: relative;
-    top: 0;
-}
-.title{
-    text-align: center;
-    position: absolute;
-    top: 12rem;
-    left:0;
-    right:0;
-    z-index:2;
-    color: white;
-    font-size: 3rem;
-    font-weight: bold;
-}
+        position: relative;
+        top: 0;
+    img{
+        height: 30rem;
+        width: 100%;
+        z-index:1;
+        position: relative;
+        top: 0;
+    }
+    .title{
+        text-align: center;
+        position: absolute;
+        top: 12rem;
+        left:0;
+        right:0;
+        z-index:2;
+        color: white;
+        font-size: 3rem;
+        font-weight: bold;
+        word-break: break-all;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+    .copyright-text{
+        padding: 3.375rem;
+    }
 }

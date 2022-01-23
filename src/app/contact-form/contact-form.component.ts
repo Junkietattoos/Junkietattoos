@@ -137,13 +137,12 @@ export class ContactFormComponent implements OnInit {
    return this._http.post<any>(this._url, myForm);
   }
   onSubmit() {
-    console.warn('Your order has been submitted', this.myForm.value);
     this.enroll(this.myForm.value).subscribe(
       data => {
         this.showMsgSuccess = true;
         console.log('Email sent successfully', data);
       },
-      error => {0
+      error => {
         this.showMsgError = true;
         console.log('Email didnt sent :(', error);
       });

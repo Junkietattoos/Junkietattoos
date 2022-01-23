@@ -6,14 +6,15 @@
 
     "FOOTER": {
       "COPYRIGHT":{
-          "TITLE": "Lucas Jakubczik, 2021",
-          "LOCATION": "  Blank Tattoostudio"
+          "TITLE": "Lucas Jakubczik, 2022",
+          "LOCATION": "  Blank Tattoostudio",
+          "PHONE": "051218754455"
       },
       "CONTACT": {
           "STREET":"Ottostraße 7",
           "PLACE": "31137 Hildesheim",
           "COUNTRY": "Germany",
-          "EMAIL": "info@junkietattoos.com"
+          "EMAIL": "junkietattoos@gmail.com"
       },
       "IMPRINT":{
           "TITLE_IMPRINT": "Imprint",
@@ -38,7 +39,21 @@
   },
   "COPYRIGHT": {
     "TITLE": "Data protection",
-    "PHONE": "0800-XXXXXXXX"
+    "GENERAL_TITLE": "Basics",
+    "GENERAL_1": "This privacy policy is intended to inform the users of this website about the nature, scope and purpose of the collection and use of personal data by the website operator Lucas Jakubczik.",
+    "GENERAL_2": "The website operator takes your privacy very seriously and treats your personal data confidentially and in accordance with the statutory provisions. Since new technologies and the constant further development of this website may result in changes to this data protection declaration, we recommend that you read through the data protection declaration again at regular intervals.",
+    "GENERAL_3": "Definitions of the terms used (e.g. 'personal data' or 'processing') can be found in Art. 4 GDPR.",
+    "USAGE_TITLE": "1. Use of personal data",
+    "USAGE_1": "We collect personal data only if they are deliberately provided by you. This data is not stored in a database. For example, after sending an appointment request, all entered data will be sent to us by e-mail. These serve as a pure source of information and are not processed further.",
+    "USAGE_2": "You have the right to withdraw your consent at any time. Data will only be passed on to third parties without your consent if we are legally obliged to do so.",
+    "COOKIES_TITLE": "2. Usage of Cookies",
+    "COOKIES_1": "Cookies are records that are sent from the web server to the user's web browser and stored there for later retrieval. The collection of cookies can be influenced if your browser is set in the way. This leads to the risk that the website will not be operable or only partially operable.",
+    "COOKIES_2": "Our cookies do not contain any personal information. A combination with any personal data provided by you does not take place.",
+    "INFO_TITLE": "3. Right of information",
+    "INFO_1": "You have the right to obtain the data stored about you at any time. This includes reasons for collection, processing, as well as recipients and origin of your data. You can obtain this by sending a request to the mentioned e-mail address or telephone number.",
+    "INFO_2": "This privacy policy applies exclusively to this website. We assume no liability for linked addresses (e.g. Instagram).",
+    "ABOUT_US_TITLE": "4. About Us",
+    "ABOUT_US_1": "This privacy policy applies to Junkietattoos. If you have any questions about our privacy policy, please contact us by email or phone number."
 },
 "CONTACT": {
     "APPOINTMENT_REQUEST": "Appointment Request",

@@ -1,46 +1,58 @@
 {
     "LANGUAGE": {
-      "GERMAN": "Deutsch",
-      "ENGLISH": "English"
+        "GERMAN": "Deutsch",
+        "ENGLISH": "English"
     },
-
     "FOOTER": {
-        "COPYRIGHT":{
-            "TITLE": "Lucas Jakubczik, 2021",
+        "COPYRIGHT": {
+            "TITLE": "Lucas Jakubczik, 2022",
             "LOCATION": "  Blank Tattoostudio"
         },
         "CONTACT": {
-            "STREET":"Ottostraße 7",
+            "STREET": "Ottostraße 7",
             "PLACE": "31137 Hildesheim",
             "COUNTRY": "Deutschland",
-            "EMAIL": "info@junkietattoos.com",
-            "PHONE": "0800-XXXXXXXX"
+            "EMAIL": "junkietattoos@gmail.com",
+            "PHONE": "051218754455"
         },
-        "IMPRINT":{
+        "IMPRINT": {
             "TITLE_IMPRINT": "Impressum",
             "TITLE_DATA": "Datenschutz"
         },
-        "INFO":{
+        "INFO": {
             "OPENING": "Öffnungszeiten",
             "APPOINTMENTS": "Termine / Beratungsgespräche nur auf Anfrage."
         }
     },
-
     "HOME": {
         "HELLO": "Hallo",
         "ALIAS": "Wie mein Künstlername bereits sagt:",
         "DO": "ich tätowiere Leute! Und bald auch dich",
-        "BUTTON": "Terminbuchung"    
+        "BUTTON": "Terminbuchung"
     },
     "IMPRINT": {
-       "TITLE": "Impressum",
-       "NAME": "Lukas Jakubczik",
-       "APPOINTMENT": "Terminbuchung"
+        "TITLE": "Impressum",
+        "NAME": "Lukas Jakubczik",
+        "APPOINTMENT": "Terminbuchung"
     },
     "COPYRIGHT": {
-        "TITLE": "Datenschutzerklärung"
+        "TITLE": "Datenschutzerklärung",
+        "GENERAL_TITLE": "Grundlegendes",
+        "GENERAL_1": "Diese Datenschutzerklärung soll die Nutzer dieser Website über die Art, den Umfang und den Zweck der Erhebung und Verwendung personenbezogener Daten durch den Websitebetreiber Lucas Jakubczik informieren.",
+        "GENERAL_2": "Der Websitebetreiber nimmt Ihren Datenschutz sehr ernst und behandelt Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Vorschriften. Da durch neue Technologien und die ständige Weiterentwicklung dieser Webseite Änderungen an dieser Datenschutzerklärung vorgenommen werden können, empfehlen wir Ihnen sich die Datenschutzerklärung in regelmäßigen Abständen wieder durchzulesen.",
+        "GENERAL_3": "Definitionen der verwendeten Begriffe (z.B. “personenbezogene Daten” oder “Verarbeitung”) finden Sie in Art. 4 DSGVO.",
+        "USAGE_TITLE": "1. Verwendung personenbezogener Daten",
+        "USAGE_1": "Wir sammeln personenbezogene Daten nur, wenn sie bewusst von Ihnen bereitgestellt werden. Diese Daten werden nicht in einer Datenbank gespeichert. Zum Beispiel werden nach Absenden einer Terminanfrage alle Eingetragenen Daten per E-Mail an uns gesendet. Diese dienen als reine Informationsquelle und werden nicht weiterverarbeitet.",
+        "USAGE_2": "Sie haben jederzeit ein Widerrufsrecht hinsichtlich einer erteilten Einwilligung. Eine Weitergabe der Daten an Dritte erfolgt ohne Ihre Einwilligung nur dann, wenn wir hierzu gesetzlich verpflichtet sind.",
+        "COOKIES_TITLE": "2. Verwendung von Cookies",
+        "COOKIES_1": "Cookies sind Datensätze, die vom Webserver an den Webbrowser des Nutzers gesandt und dort für einen späteren Abruf gespeichert werden. Das Sammeln von Cookies kann beeinflusst werden, wenn Ihren Browser in der Weise einstellen. Dies führt zur Gefahr das die Website nicht oder nur zum Teil bedienbar wird. Wir verwenden nur native Browser Cookies, welche zum Speichern von ",
+        "COOKIES_2": "Unsere Cookies enthalten keine personenbezogenen Informationen. Eine Zusammenführung mit etwaigen von Ihnen zur Verfügung gestellten personenbezogenen Daten erfolgt nicht.",
+        "INFO_TITLE": "3. Auskunftsrecht",
+        "INFO_1": "Sie haben das Recht, die zu Ihrer Person gespeicherten Daten jederzeit zu erhalten. Dazu zählen Gründe des Erhebens, Verarbeitens, sowie Empfänger und Ursprung Ihrer Daten. Diese erlangen Sie per Anfrage an genannte E-Mail Adresse oder Telefonnummer.",
+        "INFO_2": "Diese Datenschutzerklärung gilt ausschließlich für diese Website. Für verlinkte Adressen (z.B. Instagram) übernehmen wir keine Gewähr.",
+        "ABOUT_US_TITLE": "4. Über uns",
+        "ABOUT_US_1": "Diese Datenschutzerklärung bezieht sich auf Junkietattoos. Bei Fragen zu unserer Datenschutzerklärung wenden Sie sich per E-Mail oder Telefonnummer an uns."
     },
-
     "CONTACT": {
         "APPOINTMENT_REQUEST": "Buchungsanfrage",
         "PRONOUNS": "Pronomen*",
@@ -55,7 +67,7 @@
         "PREFERRED_DAY": "Präferierte Tage*",
         "PREFERRED_TIME": "Präferierte Tageszeit*",
         "MORE_INFO": "Weitere Angaben zum Projekt",
-        "RECURRING_CUSTOMER": "Wiederkehrender Kunde?", 
+        "RECURRING_CUSTOMER": "Wiederkehrender Kunde?",
         "DESIGN": "Falls ja: Bitte Design angeben",
         "AGREE_1": "Hiermit stimme ich den folgenden Bedingungen zu:*",
         "AGREE_2": "Ich bin über 18 Jahre alt.",
@@ -66,4 +78,4 @@
         "SUCCESS": "Email wurde erfolgreich versandt!",
         "ERROR": "Email konnte nicht versendet werden, versuchen Sie es später erneut oder kontaktieren Sie uns"
     }
-  }
+}
