@@ -27,6 +27,13 @@ img{
     .first{
         line-height: 3rem;
         margin-bottom: 2rem;
+        .mailto{
+            text-decoration: none;
+            color:white;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
     button{
         height: 5rem;

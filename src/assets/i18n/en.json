@@ -22,20 +22,23 @@
       },
       "INFO":{
           "OPENING": "Opening hours",
-          "APPOINTMENTS": "Appointments / consultation only by request."
+          "APPOINTMENTS": "Monday - Tuesday 12:00 - 18:00"
       }
   },
 
   "HOME": {
       "HELLO": "Hello",
-      "ALIAS": "As my alias already reveals:",
-      "DO": "I tattoo people! And its your turn soon!",
-      "BUTTON": "Booking"    
+      "ALIAS": "Letterings, Comicstyle, Fun things.",
+      "DO": "Tell me what you're up for, we'll get it done!",
+      "LINK": "To check out my references, go to",
+      "INSTA":" Instagram.",
+      "APPOINTMENT": "Fancy an appointment ? Click here to request an appointment:",
+      "BUTTON": "Appointment request"    
   },
   "IMPRINT": {
       "TITLE": "Imprint",
       "NAME": "Lukas Jakubczik",
-      "APPOINTMENT": "Appointment"
+      "APPOINTMENT": "Appointment request"
   },
   "COPYRIGHT": {
     "TITLE": "Data protection",
@@ -57,6 +60,7 @@
 },
 "CONTACT": {
     "APPOINTMENT_REQUEST": "Appointment Request",
+    "APPOINTMENT_DETAILS": "If you would like an appointment, please fill out this form completely. This will help me to answer your request promptly and accurately.",
     "PRONOUNS": "Pronouns*",
     "FIRST_NAME": "First name*",
     "LAST_NAME": "Last name*",
@@ -74,7 +78,8 @@
     "AGREE_1": "I hereby agree to the following conditions:*",
     "AGREE_2": "I am over 18 years old.",
     "AGREE_3": "I am aware that I will lose any claims to prepayment if I cancel the chosen appointment later than 48 hours before the start.",
-    "AGREE_4": "I agree to wear a medical mouth and nose cover during the appointment.",
+    "AGREE_4": "I agree to wear the currently required mask during the appointment.",
+    "AGREE_5": "I am adequately vaccinated at the time of the appointment.",
     "SEND": "Submit request",
     "REQUIRED": "All entries with an (*) are mandatory.",
     "SUCCESS": "Email has been sent!",

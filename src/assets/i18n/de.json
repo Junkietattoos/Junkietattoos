@@ -21,19 +21,22 @@
         },
         "INFO": {
             "OPENING": "Öffnungszeiten",
-            "APPOINTMENTS": "Termine / Beratungsgespräche nur auf Anfrage."
+            "APPOINTMENTS": "Dienstag - Samstag 12-18 Uhr"
         }
     },
     "HOME": {
         "HELLO": "Hallo",
-        "ALIAS": "Wie mein Künstlername bereits sagt:",
-        "DO": "ich tätowiere Leute! Und bald auch dich",
-        "BUTTON": "Terminbuchung"
+        "ALIAS": "Letterings, Comicstyle, Spaßdinger.",
+        "DO": "Sag mir worauf du bock hast, wir kriegens hin!",
+        "LINK": "Um meine Referenzen anzugucken, geh auf",
+        "INSTA":"Instagram.",
+        "APPOINTMENT": "Bock aufn Termin ? Hier gehts zur Terminanfrage:",
+        "BUTTON": "Terminanfrage"
     },
     "IMPRINT": {
         "TITLE": "Impressum",
         "NAME": "Lukas Jakubczik",
-        "APPOINTMENT": "Terminbuchung"
+        "APPOINTMENT": "Terminanfrage"
     },
     "COPYRIGHT": {
         "TITLE": "Datenschutzerklärung",
@@ -55,6 +58,7 @@
     },
     "CONTACT": {
         "APPOINTMENT_REQUEST": "Buchungsanfrage",
+        "APPOINTMENT_DETAILS": "Wenn du einen Termin möchtest, füll bitte dieses Formular vollständig aus. Das Hilft mir deine Anfrage zeitnah und präziese zu beantworten.",
         "PRONOUNS": "Pronomen*",
         "FIRST_NAME": "Vorname*",
         "LAST_NAME": "Nachname*",
@@ -72,7 +76,8 @@
         "AGREE_1": "Hiermit stimme ich den folgenden Bedingungen zu:*",
         "AGREE_2": "Ich bin über 18 Jahre alt.",
         "AGREE_3": "Ich bin mir bewusst, eventuelle Ansprüche auf Vorkassen-Zahlungen zu verlieren, sofern ich den gewählten Termin später als 48 Stunden vor Beginn absage.",
-        "AGREE_4": "Ich bin damit einverstanden, während des Termins eine medizinische Mund-Nasen-Bedeckung zu tragen.",
+        "AGREE_4": "Ich bin damit einverstanden, während des Termins die aktuell erforderliche Maske zu tragen.",
+        "AGREE_5": "Ich bin zum Zeitpunkt des Termins ausreichend geimpft.",
         "SEND": "Anfrage abschicken",
         "REQUIRED": "Alle Angaben mit einem (*) sind verpflichtend.",
         "SUCCESS": "Email wurde erfolgreich versandt!",
