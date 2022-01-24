@@ -1,4 +1,7 @@
 <body>
+  <span routerLink="/home"> <span class="arrow">&#8701; </span>
+  <span class="back"> {{'CONTACT.BACK' | translate}} </span>
+  </span>
   <div class="container-lg main-container">
     <div class="row justify-content-center">
       <div class="col-auto">
@@ -128,9 +131,10 @@
         </div>
         <div [class.not-allowed]="!myForm?.valid || !checked || !checkedParts || !checkedDays">
           <button class="btn btn-dark margin-left" type="submit"
-            [class.disabled]="!myForm?.valid || !checked || !checkedParts || !checkedDays" [class.disableButton]="disableButton"> {{'CONTACT.SEND' |
+            [class.disabled]="!myForm?.valid || !checked || !checkedParts || !checkedDays"
+            [class.disableButton]="disableButton"> {{'CONTACT.SEND' |
             translate}}</button> <br>
-            <span class="required margin-left"> {{'CONTACT.REQUIRED' | translate}}</span>
+          <span class="required margin-left"> {{'CONTACT.REQUIRED' | translate}}</span>
         </div>
         <div *ngIf="showMsgSuccess" class="alert success">
           {{'CONTACT.SUCCESS' | translate}}
