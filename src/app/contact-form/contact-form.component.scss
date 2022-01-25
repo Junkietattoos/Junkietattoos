@@ -65,6 +65,17 @@ label {
         width: 12rem;
     }
 .row {
-    padding-left: 4rem;
+    padding-left: 3rem;
     padding-right: 4rem;
+}
+.send-appointment{
+    margin-left: 16px;
+    display: grid;
+}
+@media only screen and (min-width: 600px) {
+    .row{
+    padding-left: 5rem;
+    padding-right: 6rem;
+
+}
 }
