@@ -4,16 +4,23 @@ footer{
     margin-top: 1.5rem;
     width: 100%;
     background-color: #EEEEEE;
-    padding: 1.875rem;
+    padding-top: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
     white-space: nowrap;
 
 .left{
-    width:50%;
-        .copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%;
+    margin-top: 0.9rem;
+    .copyright {
             margin-left: 1.5rem;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: bold;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
         }
         .contact{
             margin-left: 1.5rem;
@@ -40,15 +47,14 @@ footer{
 }
 
 .right{
-    width: 50%;
-    align-items: flex-end;
-    margin-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 .opening-hours{
     line-height: 4rem;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: bold;
-
 }
 .appointments{
     font-size: 1rem;
@@ -62,6 +68,9 @@ footer{
    }
    iframe{
     width: 68vw !important;
+}
+.right {
+    margin-left: 1.5rem;
 }
   }
   

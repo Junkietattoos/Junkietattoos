@@ -11,7 +11,7 @@ label {
 }
 
 .returningCustomer{
-    width: 50%;
+    width: 100%;
     resize: none;
 }
 
@@ -61,3 +61,10 @@ label {
     .back {
         font-weight: bold;
     }
+    .logo{
+        width: 12rem;
+    }
+.row {
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
