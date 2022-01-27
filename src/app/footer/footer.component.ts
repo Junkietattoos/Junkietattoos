@@ -6,9 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-//TODO: Get the Customs Google Map 2 work u dumbass
-// this ur API KEY: AIzaSyAoM6xB1MUM50-5uN_0UIFhtYVDvW3EffE
- //  map: google.maps.Map;
+
+  consent = false;
   constructor() { }
 
   ngOnInit(): void {
