@@ -10,10 +10,9 @@ export class FooterComponent implements OnInit {
   consent = false;
   constructor() { }
 
+  setCookie () { 
+    this.consent = true;
+}
   ngOnInit(): void {
- /** this.map = new google.maps.Map(document.getElementById("map") as HTMLElement, {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 8,
-  }); **/
   }
 }
