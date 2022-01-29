@@ -69,10 +69,25 @@ footer{
    iframe{
     width: 68vw !important;
 }
+    .maps-consent {
+        padding-right: 60px;
+    }
+    img {
+        max-width: 290px !important;
+        min-width: 290px !important;
+
+    }
 .right {
     margin-left: 1.5rem;
 }
   }
+  @media only screen and (max-width: 700px) {
+    img {
+        max-width: 290px;
+        min-width: 10px;
+
+    }
+}
   
 
 
