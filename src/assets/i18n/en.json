@@ -6,7 +6,6 @@
 
     "FOOTER": {
       "COPYRIGHT":{
-          "TITLE": "Lucas Jakubczik, 2022",
           "LOCATION": "  Blank Tattoostudio",
           "PHONE": "051218754455"
       },
@@ -62,7 +61,7 @@
     "BACK": "Back to previous Page",
     "APPOINTMENT_REQUEST": "Appointment Request",
     "APPOINTMENT_DETAILS": "If you would like an appointment, please fill out this form completely. This will help me to answer your request promptly and accurately.",
-    "PRONOUNS": "Pronouns*",
+    "PRONOUNS": "Pronouns",
     "FIRST_NAME": "First name*",
     "LAST_NAME": "Last name*",
     "EMAIL": "E-Mail*",

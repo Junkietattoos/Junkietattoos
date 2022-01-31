@@ -2,13 +2,13 @@
 <footer>
     <div class="left">
         <div class="copyright">
-            {{'FOOTER.COPYRIGHT.TITLE' | translate}}&copy; <br>
             {{'FOOTER.COPYRIGHT.LOCATION' | translate}}
         </div>
         <div class="contact">{{'FOOTER.CONTACT.STREET' | translate}} <br>
             {{'FOOTER.CONTACT.PLACE' | translate}}<br>
             {{'FOOTER.CONTACT.COUNTRY' | translate}}<br>
-            <a href="mailto:junkietattoos@gmail.com" class="mailto"> {{'FOOTER.CONTACT.EMAIL' | translate}}</a>
+            <a href="mailto:junkietattoos@gmail.com" class="mailto"> {{'FOOTER.CONTACT.EMAIL' | translate}}</a> <br>
+            Tel: 051218754455
         </div>
         <p id="links">
             <a class="bold-links" routerLink="/imprint" routerLinkActive="active">{{'FOOTER.IMPRINT.TITLE_IMPRINT' |
@@ -30,16 +30,18 @@
             <div class="maps-container">
                 <img src="assets/img/maps.png"  class="maps-picutre">
             </div>
-                <span class="maps-consent">
+                <p class="maps-consent">
+                    <span>
                     Durch Aktivierung der Karte werden von <br> Google Maps Cookies gesetzt, Ihre IP-​Adresse <br> 
                     gespeichert und Daten in die USA übertragen.
 
                     <br> Mehr dazu in unserem <a routerLink="/copyright" class="copyright"> Datenschutzhinweis </a> <br>
+                    </span>
                 <button (click)="setCookie()" class="btn btn-dark">Google Maps aktivieren </button> <br>
                 <button class="btn btn-dark">
                     <a href="https://goo.gl/maps/hTYV1RJuNWp5iiRT7" class="maps-link"> Standort in Google Maps
                         aufrufen</a></button>
-                    </span>
+                    </p>
 
         </ng-container>
     </div>

@@ -5,8 +5,8 @@
     },
     "FOOTER": {
         "COPYRIGHT": {
-            "TITLE": "Lucas Jakubczik, 2022",
-            "LOCATION": "  Blank Tattoostudio"
+            "LOCATION": "  Blank Tattoostudio",
+            "PHONE": "051218754455"
         },
         "CONTACT": {
             "STREET": "Ottostraße 7",
@@ -59,8 +59,9 @@
     "CONTACT": {
         "BACK": "Zurück zur vorherigen Seite",
         "APPOINTMENT_REQUEST": "Buchungsanfrage",
+        "APPOINTMENT_INFO":"Um eine unverbindliche Tattooanfrage zu stellen, füll bitte dieses Formular aus. Es Hilft mir deine Fragen gezielt und schnell zu beantworten.",
         "APPOINTMENT_DETAILS": "Wenn du einen Termin möchtest, füll bitte dieses Formular vollständig aus. Das Hilft mir deine Anfrage zeitnah und präziese zu beantworten.",
-        "PRONOUNS": "Pronomen*",
+        "PRONOUNS": "Pronomen",
         "FIRST_NAME": "Vorname*",
         "LAST_NAME": "Nachname*",
         "EMAIL": "E-Mail*",
@@ -72,8 +73,8 @@
         "PREFERRED_DAY": "Präferierte Tage*",
         "PREFERRED_TIME": "Präferierte Tageszeit*",
         "MORE_INFO": "Weitere Angaben zum Projekt",
-        "RECURRING_CUSTOMER": "Wiederkehrender Kunde?",
-        "DESIGN": "Falls ja: Bitte Design angeben",
+        "RECURRING_CUSTOMER": "Hab ich dich schonmal tätowiert?",
+        "DESIGN": " Falls ja, was gabs?",
         "AGREE_1": "Hiermit stimme ich den folgenden Bedingungen zu:*",
         "AGREE_2": "Ich bin über 18 Jahre alt.",
         "AGREE_3": "Ich bin mir bewusst, eventuelle Ansprüche auf Vorkassen-Zahlungen zu verlieren, sofern ich den gewählten Termin später als 48 Stunden vor Beginn absage.",

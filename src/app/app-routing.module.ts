@@ -8,7 +8,7 @@ import { LanguageComponent } from './language/language.component';
 
 
 const routes: Routes = [
-  { path: '', component: LanguageComponent },
+  { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'imprint', component: ImprintComponent },
   { path: 'copyright', component: CopyrightComponent },

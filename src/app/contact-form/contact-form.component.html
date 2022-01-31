@@ -5,12 +5,12 @@
   <div class="container-lg main-container">
     <div class="row justify-content-center">
       <div class="col-auto">
-        <img src="assets/img/logo.jpg" alt="Junkie Tattoos Logo" class="logo">
+        <h2 class="headline">{{'CONTACT.APPOINTMENT_REQUEST' | translate}}</h2>
       </div>
     </div>
     <div class="row justify-content-center">
       <div class="col-auto">
-        <h2>{{'CONTACT.APPOINTMENT_REQUEST' | translate}}</h2>
+        <p class="info">{{'CONTACT.APPOINTMENT_INFO' | translate}}</p>
       </div>
     </div>
     <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="px-0">
@@ -18,7 +18,7 @@
         <div class="col-sm-12 col-md-2">
           <div class="mb-3">
             <label class="form-label" for="Pronouns">{{'CONTACT.PRONOUNS' | translate}}</label>
-            <input id="Pronouns" type="text" formControlName="pronouns" class="full" name="name" required>
+            <input id="Pronouns" type="text" formControlName="pronouns" class="full" name="name">
           </div>
         </div>
         <div class="col-sm-12 col-md-5">
