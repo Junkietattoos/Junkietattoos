@@ -86,7 +86,7 @@ export class ContactFormComponent implements OnInit {
 
   ngOnInit() {
     this.myForm = this.fb.group({
-      pronouns: new FormControl('', [Validators.required]),
+      pronouns: new FormControl(''),
       firstName: new FormControl('', [Validators.required]),
       lastName: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required]),
