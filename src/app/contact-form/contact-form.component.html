@@ -69,15 +69,6 @@
         </div>
         <div class="col-12">
           <div class="mb-3">
-            <label class="form-label" for="designType">{{'CONTACT.DESIGNTYPE' | translate}}</label>
-            <div *ngFor="let data of designtype" class="item" required>
-              <input type="radio" formControlName="designType" [value]='data' required />
-              {{ data }}<br />
-            </div>
-          </div>
-        </div>
-        <div class="col-12">
-          <div class="mb-3">
             <label class="form-label" for="preferredDay">{{'CONTACT.PREFERRED_DAY' | translate}}</label>
             <div *ngFor="let data of days" class="item" required (click)="checkedDays = true">
               <input type="checkbox" (change)="onChangeDays(data.preferredDay, $event.target.checked)" />

@@ -11,6 +11,7 @@ import { FormGroup, FormBuilder, FormArray, FormControl, Validators, NgForm} fro
 export class ContactFormComponent implements OnInit {
   
   _url = 'https://backend-u7nowymugq-ew.a.run.app/junkietattoos/receiveNewContact/';
+  _devurl = 'https://backend-dev-u7nowymugq-ew.a.run.app/junkietattoos/receiveNewContact/';
   myForm: FormGroup;
   checked = false;
   checkedParts = false;
@@ -52,20 +53,13 @@ export class ContactFormComponent implements OnInit {
     { bodypart: 'Finger' }
   ];
 
-  designtype = [
-    'Flash', 
-    'Custom', 
-    'Nicht bekannt'
-  ];
 
   days = [
-    { preferredDay: 'Montag' },
     { preferredDay: 'Dienstag' },
     { preferredDay: 'Mittwoch' },
     { preferredDay: 'Donnerstag' },
     { preferredDay: 'Freitag' },
-    { preferredDay: 'Samstag' },
-    { preferredDay: 'Sonntag' }
+    { preferredDay: 'Samstag' }
   ];
   options = [
     { projectInformation: 'Ganztägige Session (Große Projekte / Ganze Körperteile)' },
@@ -76,9 +70,10 @@ export class ContactFormComponent implements OnInit {
   'Vormittags',
   'Mittags',
   'Nachmittags'
-  ]
+  ];
 
 
+//TODO: In Model auslagern und dann einfach mit Methode holen
   constructor(
     private fb: FormBuilder,
     private _http: HttpClient
@@ -94,7 +89,6 @@ export class ContactFormComponent implements OnInit {
       phonenumber: new FormControl('', [Validators.required]),
       description: new FormControl('', [Validators.required]),
       bodypart: this.fb.array([]),
-      designType: new FormControl('', [Validators.required]),
       preferredDay: this.fb.array([]),
       preferredTime: new FormControl('', [Validators.required]),
       projectInformation: this.fb.array([]),
@@ -140,12 +134,10 @@ export class ContactFormComponent implements OnInit {
     this.enroll(this.myForm.value).subscribe(
       data => {
         this.showMsgSuccess = true;
-        console.log('Email sent successfully', data);
       },
       error => {
         this.showMsgError = true;
-        console.log('Email didnt sent :(', error);
-      });
+            });
     this.disableButton =  true;
   }
 }
