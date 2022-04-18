@@ -10,7 +10,7 @@ import { FormGroup, FormBuilder, FormArray, FormControl, Validators, NgForm} fro
 })
 export class ContactFormComponent implements OnInit {
   
-  _url = 'https://backend-u7nowymugq-ew.a.run.app/junkietattoos/receiveNewContact/';
+  _url = 'https://lilcolorink-prod-u4nlk5tfvq-ew.a.run.app/lilcolorink/receiveNewContact/';
   _devurl = 'https://backend-dev-u7nowymugq-ew.a.run.app/junkietattoos/receiveNewContact/';
   myForm: FormGroup;
   checked = false;
@@ -81,6 +81,7 @@ export class ContactFormComponent implements OnInit {
 
   ngOnInit() {
     this.myForm = this.fb.group({
+      studio: new FormControl('LilColorInk', []),
       pronouns: new FormControl(''),
       firstName: new FormControl('', [Validators.required]),
       lastName: new FormControl('', [Validators.required]),
@@ -137,6 +138,7 @@ export class ContactFormComponent implements OnInit {
       },
       error => {
         this.showMsgError = true;
+        console.log(error);
             });
     this.disableButton =  true;
   }
