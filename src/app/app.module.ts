@@ -17,6 +17,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { CookiesComponent } from './cookies/cookies.component';
+import { CareInstructionsComponent } from './care-instructions/care-instructions.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -32,7 +33,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ImprintComponent,
     LanguageComponent,
     HomeComponent,
-    CookiesComponent
+    CookiesComponent,
+    CareInstructionsComponent
   ],
   imports: [
     BrowserModule,

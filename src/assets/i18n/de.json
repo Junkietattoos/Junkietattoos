@@ -17,7 +17,8 @@
         },
         "IMPRINT": {
             "TITLE_IMPRINT": "Impressum",
-            "TITLE_DATA": "Datenschutz"
+            "TITLE_DATA": "Datenschutz",
+            "TITLE_CARE": "Pflegehinweise"
         },
         "INFO": {
             "OPENING": "Öffnungszeiten",
